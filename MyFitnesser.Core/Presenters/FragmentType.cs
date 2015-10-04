@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyFitnesser.Core.Presenters {
+namespace MyFitnesser.Core {
   
   public enum FragmentType {
     ClientsList,

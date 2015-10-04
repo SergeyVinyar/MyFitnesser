@@ -1,4 +1,4 @@
-﻿namespace MyFitnesser.Core.Presenters {
+﻿namespace MyFitnesser.Core {
   using System;
 
 

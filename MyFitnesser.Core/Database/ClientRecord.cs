@@ -1,13 +1,11 @@
 ﻿namespace MyFitnesser.Core {
   using System;
+  using System.Threading.Tasks;
   using System.Linq;
   using SQLite;
 
 
-  internal class dbClient {
-
-    [PrimaryKey]
-    public Guid Id { get; set; }
+  internal class ClientRecord : RecordBase<ClientRecord> {
 
     [MaxLength(256)]
     public string Name { get; set; }
@@ -22,25 +20,6 @@
 
     [MaxLength(2000)]
     public string Notes { get; set; }
-
-    public static void CreateTable() {
-      DbConnection.Get().CreateTable<Client>();
-    }
-
-    public static IQueryable<Client> Records() {
-      return DbConnection.Get().Table<Client>().AsQueryable();
-    }
-
-    public void Write() {
-      bool isNew = (Id == Guid.Empty);
-      if (isNew) {
-        Id = Guid.NewGuid();
-        DbConnection.Get().Insert(this);
-      }
-      else {
-        DbConnection.Get().Update(this);
-      }
-    }
 	}
 }
 

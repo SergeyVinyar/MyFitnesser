@@ -1,27 +1,31 @@
-﻿namespace MyFitnesser.Core.Presenters {
+﻿namespace MyFitnesser.Core {
   using System;
 
 
-  public class ClientForm : IClientFormPresenter {
+  public class ClientFormPresenter : IClientFormPresenter {
 
-    public ClientForm(IClientFormView view) : this(view, Guid.Empty) {
+    public ClientFormPresenter(IClientFormView view) : this(view, Guid.Empty) {
 
     }
 
-    public ClientForm(IClientFormView view, Guid id) {
+    public ClientFormPresenter(IClientFormView view, Guid id) {
       if(id == Guid.Empty)
-        _Client = Models.ClientModel.New();
+        _Client = ClientModel.New();
       else
-        _Client = Models.ClientModel.Get(id);
+        _Client = ClientModel.Get(id);
       _View = view;
-      //_View.SetName(_Client.Name);
-      //_View.SetEmail(_Client.EMail);
-      //_View.SetBirthDay(_Client.BirthDay);
-      _Client.OnChanged += (sender, e) => {
-        _View.SetName(_Client.Name);
-        _View.SetEmail(_Client.EMail);
-        _View.SetBirthDay(_Client.BirthDay);
+      _OnClientChanged = (sender, e) => {
+        SetViewData();
       };
+    }
+
+    void IClientFormPresenter.Start() {
+      _Client.OnChanged += _OnClientChanged;
+      SetViewData();
+    }
+
+    void IClientFormPresenter.Stop() {
+      _Client.OnChanged -= _OnClientChanged;
     }
 
     void IClientFormPresenter.SetName(string value) {
@@ -36,11 +40,23 @@
       _Client.BirthDay = value;
     }
 
-    private Models.ClientModel _Client;
+    private EventHandler _OnClientChanged;
+
+    private void SetViewData() {
+      _View.SetName(_Client.Name);
+      _View.SetEmail(_Client.EMail);
+      _View.SetBirthDay(_Client.BirthDay);
+    }
+
+    private ClientModel _Client;
     private IClientFormView _View;
   }
 
   public interface IClientFormPresenter {
+
+    void Start();
+
+    void Stop();
 
     void SetName(string value);
 

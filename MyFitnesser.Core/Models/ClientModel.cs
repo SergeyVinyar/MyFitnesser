@@ -1,17 +1,31 @@
-﻿namespace MyFitnesser.Core.Models {
+﻿namespace MyFitnesser.Core {
   using System;
   using System.Collections.Generic;
   using System.Linq;
 
 
-  internal class Client {
-  
-    public Client() {
-      _Record = new Database.Client();
+  internal class ClientModel {
+
+    public static ClientModel New() {
+      return new ClientModel(Guid.Empty);
     }
 
-    public Client(Guid id) {
-      _Record = Database.Client.Records().Where(_ => _.Id == id).FirstOrDefault();
+    public static ClientModel Get(Guid id) {
+      if (_Models.ContainsKey(id)) {
+        return _Models[id];
+      }
+      else {
+        var model = new ClientModel(id);
+        _Models[id] = model;
+        return model;
+      }
+    }
+
+    private ClientModel(Guid id) : base() { 
+      if (id == Guid.Empty)
+        _Record = new ClientRecord();
+      else
+        _Record = ClientRecord.Records().Where(_ => _.Id == id).FirstOrDefault();
     }
 
     public string Name {
@@ -19,9 +33,11 @@
         return _Record.Name;
       }
       set { 
+        if (_Record.Name == value)
+          return;
         _Record.Name = value;
-        _Record.Write();
         Changed();
+        _Record.Write();
       }
     }
 
@@ -30,9 +46,11 @@
         return _Record.EMail;
       }
       set { 
+        if (_Record.EMail == value)
+          return;
         _Record.EMail = value;
-        _Record.Write();
         Changed();
+        _Record.Write();
       }
     }
 
@@ -41,9 +59,11 @@
         return _Record.BirthDay;
       }
       set { 
+        if (_Record.BirthDay == value)
+          return;
         _Record.BirthDay = value;
-        _Record.Write();
         Changed();
+        _Record.Write();
       }
     }
 
@@ -54,25 +74,9 @@
     }
 
     public event EventHandler OnChanged; 
+    private ClientRecord _Record;
 
-    private Database.Client _Record;
-
-    public static Client Get(Guid id) {
-      if (_Clients.ContainsKey(id)) {
-        return _Clients[id];
-      }
-      else {
-        var client = new Models.Client(id);
-        _Clients[id] = client;
-        return client;
-      }
-    }
-
-    public static Client New() {
-      return new Client();
-    }
-
-    private static Dictionary<Guid, Client> _Clients = new Dictionary<Guid, Client>();
+    private static Dictionary<Guid, ClientModel> _Models = new Dictionary<Guid, ClientModel>();
   }
 }
 

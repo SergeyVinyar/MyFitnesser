@@ -12,13 +12,15 @@
   using Android.Views;
   using Android.Widget;
 
-  using P = Core.Presenters;
 
+  public class ClientForm : Fragment, Core.IClientFormView {
 
-  public class ClientForm : Fragment, P.IClientFormView {
+    public ClientForm() : base() {
+      _Presenter = new Core.ClientFormPresenter(this);
+    }
 
-    public ClientForm(Guid id) {
-      _Presenter = new P.ClientForm(this, id);
+    public ClientForm(Guid id) : base() {
+      _Presenter = new Core.ClientFormPresenter(this, id);
     }
 
     public override void OnCreate(Bundle savedInstanceState) {
@@ -31,24 +33,29 @@
 
     public override void OnStart() {
       base.OnStart();
+      _Presenter.Start();
       View.FindViewById<EditText>(Resource.Id.client_name).TextChanged += (sender, e) => { _Presenter.SetName(e.Text.ToString()); };
       View.FindViewById<EditText>(Resource.Id.client_email).TextChanged += (sender, e) => { _Presenter.SetEmail(e.Text.ToString()); };
     }
 
-    void P.IClientFormView.SetName(string value) {
+    public override void OnStop() {
+      base.OnStop();
+      _Presenter.Stop();
+    }
+
+    void Core.IClientFormView.SetName(string value) {
       View.FindViewById<EditText>(Resource.Id.client_name).Text = value;
     }
 
-    void P.IClientFormView.SetEmail(string value) {
+    void Core.IClientFormView.SetEmail(string value) {
       View.FindViewById<EditText>(Resource.Id.client_email).Text = value;
     }
 
-    void P.IClientFormView.SetBirthDay(DateTime value) {
+    void Core.IClientFormView.SetBirthDay(DateTime value) {
 
     }
 
-    private P.IClientFormPresenter _Presenter;
-
+    private Core.IClientFormPresenter _Presenter;
   }
 }
 

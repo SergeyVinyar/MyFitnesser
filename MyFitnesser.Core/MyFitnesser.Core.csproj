@@ -43,16 +43,21 @@
     <Reference Include="SQLite">
       <HintPath>..\Components\sqlite-net-1.0.8.3\lib\android\SQLite.dll</HintPath>
     </Reference>
+    <Reference Include="DSoft.Messaging">
+      <HintPath>..\Components\messagebus-1.4\lib\android\DSoft.Messaging.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
-    <Compile Include="Database\Client.cs" />
     <Compile Include="Database\DbConnection.cs" />
     <Compile Include="Database\DbInit.cs" />
-    <Compile Include="Models\Client.cs" />
     <Compile Include="Presenters\ClientsList.cs" />
-    <Compile Include="Presenters\ClientForm.cs" />
     <Compile Include="Presenters\FragmentType.cs" />
+    <Compile Include="Database\ClientRecord.cs" />
+    <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Database\RecordBase.cs" />
+    <Compile Include="Presenters\ClientFormPresenter.cs" />
+    <Compile Include="Models\ModelsEventBus.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -69,6 +74,10 @@
   <ItemGroup>
     <XamarinComponentReference Include="sqlite-net">
       <Version>1.0.8.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="messagebus">
+      <Version>1.4</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>
