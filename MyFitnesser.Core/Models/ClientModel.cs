@@ -67,16 +67,37 @@
       }
     }
 
+    public void Write() {
+
+
+    }
+
+
     protected void Changed() {
       var temp = OnChanged;
       if (temp != null)
-        temp(this, EventArgs.Empty);
+        temp(this, new ModelEventArgs(_Record.Id));
     }
+    public event ModelEventHandler OnChanged; 
 
-    public event EventHandler OnChanged; 
     private ClientRecord _Record;
 
     private static Dictionary<Guid, ClientModel> _Models = new Dictionary<Guid, ClientModel>();
+
+    protected static void Created(Guid id) {
+      var temp = OnCreated;
+      if (temp != null)
+        temp(null, new ModelEventArgs(id));
+    }
+    private static event ModelEventHandler OnCreated;
+
+    protected static void Removed(Guid id) {
+      var temp = OnRemoved;
+      if (temp != null)
+        temp(null, new ModelEventArgs(id));
+    }
+    private static event ModelEventHandler OnRemoved;
+
   }
 }
 

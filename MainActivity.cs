@@ -8,14 +8,13 @@
   using Android.OS;
 
 
-	[Activity(Label = "MyFitnesser", MainLauncher = true, Icon = "@drawable/icon")]
-	internal class MainActivity : Activity {
+  [Activity(Label = "MyFitnesser", MainLauncher = true, Icon = "@drawable/icon")]
+  internal class MainActivity : Activity {
 
-		protected override void OnCreate(Bundle bundle)	{
-			base.OnCreate(bundle);
-			SetContentView(Resource.Layout.Main);
-
-		}
+    protected override void OnCreate(Bundle bundle)	{
+      base.OnCreate(bundle);
+      SetContentView(Resource.Layout.Main);
+    }
 
     protected override void OnStart() {
       base.OnStart();
@@ -31,8 +30,6 @@
     }
 
     public void SetLeftPanel(Core.FragmentType type, Guid id) {
-      if (!HasTwoPanels)
-        return;
       switch (type) {
         case Core.FragmentType.ClientForm:
           FragmentManager.BeginTransaction().Add(Resource.Id.panel_left, new ClientForm(id)).Commit();

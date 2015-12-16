@@ -40,7 +40,7 @@
       _Client.BirthDay = value;
     }
 
-    private EventHandler _OnClientChanged;
+    private Core.ModelEventHandler _OnClientChanged;
 
     private void SetViewData() {
       _View.SetName(_Client.Name);
