@@ -1,7 +1,5 @@
 ﻿namespace MyFitnesser.Core {
   using System;
-  using System.Threading.Tasks;
-  using System.Linq;
   using SQLite;
 
 
@@ -20,6 +18,7 @@
 
     [MaxLength(2000)]
     public string Notes { get; set; }
-	}
+  }
+
 }
 

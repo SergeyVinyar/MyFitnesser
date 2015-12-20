@@ -10,7 +10,7 @@
     public Guid Id { get; set; }
 
     public static void CreateTable() {
-      DbConnection.Get().CreateTable<T>();
+      //DbConnection.Get().CreateTable<T>();
     }
 
     public static IQueryable<T> Records() {

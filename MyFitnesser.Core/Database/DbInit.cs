@@ -8,6 +8,7 @@
 
     public static void Start() {
       ClientRecord.CreateTable();
+      TrainRecord.CreateTable();
     }
 
     public static void Stop() {
