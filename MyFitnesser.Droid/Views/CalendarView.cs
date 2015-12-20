@@ -1,13 +1,10 @@
-﻿using Android.Graphics.Drawables;
-using Android.Graphics.Drawables.Shapes;
-using Android.Graphics;
-
-namespace MyFitnesser {
+﻿namespace MyFitnesser.Droid.Views {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Text;
 
+  using Android;
   using Android.App;
   using Android.Content;
   using Android.OS;
@@ -16,8 +13,14 @@ namespace MyFitnesser {
   using Android.Views;
   using Android.Widget;
 
+  using Android.Graphics.Drawables;
+  using Android.Graphics.Drawables.Shapes;
+  using Android.Graphics;
 
-  public class CalendarForm : Fragment {
+  using Cirrious.MvvmCross.Droid.Fragging.Fragments;
+
+
+  public class CalendarView : MvxFragment {
   
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
@@ -25,7 +28,7 @@ namespace MyFitnesser {
     }
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-      return inflater.Inflate(Resource.Layout.Calendar, container, false);
+      return inflater.Inflate(MyFitnesser.Droid.Resource.Layout.Calendar, container, false);
     }
 
 
@@ -35,17 +38,17 @@ namespace MyFitnesser {
 
   }
 
-  public class CalendarView: View {
+  public class CalendarInnerView: View {
 
-    public CalendarView(Context context, Android.Util.IAttributeSet attrs, int defStyle): base(context, attrs, defStyle) {
+    public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs, int defStyle): base(context, attrs, defStyle) {
 
     }
 
-    public CalendarView(Context context, Android.Util.IAttributeSet attrs): base(context, attrs) {
+    public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs): base(context, attrs) {
     
     }
 
-    public CalendarView(Context context): base(context) {
+    public CalendarInnerView(Context context): base(context) {
     
     }
 

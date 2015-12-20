@@ -26,9 +26,6 @@ namespace MyFitnesser.Droid
 		
 		public static void UpdateIdValues()
 		{
-			global::MyFitnesser.Core.Resource.String.ApplicationName = global::MyFitnesser.Droid.Resource.String.ApplicationName;
-			global::MyFitnesser.Core.Resource.String.Hello = global::MyFitnesser.Droid.Resource.String.Hello;
-			global::MyFitnesser.Core.Resource.String.library_name = global::MyFitnesser.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Attribute
@@ -69,7 +66,7 @@ namespace MyFitnesser.Droid
 		{
 			
 			// aapt resource value: 0x7f050001
-			public const int CalendarView = 2131034113;
+			public const int CalendarInnerView = 2131034113;
 			
 			// aapt resource value: 0x7f050000
 			public const int MvxBindingTagUnique = 2131034112;
@@ -147,7 +144,7 @@ namespace MyFitnesser.Droid
 			public const int ApplicationName = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int library_name = 2130968576;
+			public const int Hello = 2130968576;
 			
 			static String()
 			{
