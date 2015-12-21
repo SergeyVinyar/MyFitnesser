@@ -26,6 +26,8 @@ namespace MyFitnesser.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.String.ApplicationName = global::MyFitnesser.Droid.Resource.String.ApplicationName;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.String.Hello = global::MyFitnesser.Droid.Resource.String.Hello;
 		}
 		
 		public partial class Attribute
@@ -110,6 +112,9 @@ namespace MyFitnesser.Droid
 			
 			// aapt resource value: 0x7f030002
 			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Splash = 2130903043;
 			
 			static Layout()
 			{

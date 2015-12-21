@@ -76,6 +76,7 @@
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\ViewTypes.cs" />
     <Compile Include="App.cs" />
+    <Compile Include="ViewModels\MainActivityViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyFitnesser.Core.csproj" />

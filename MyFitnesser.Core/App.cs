@@ -1,4 +1,7 @@
+using Cirrious.MvvmCross.ViewModels;
+
 namespace MyFitnesser.Core {
+  using Cirrious.CrossCore;
   using Cirrious.CrossCore.IoC;
 
 
@@ -9,8 +12,8 @@ namespace MyFitnesser.Core {
         .EndingWith("Service")
         .AsInterfaces()
         .RegisterAsLazySingleton();
-			
-      //RegisterAppStart<ViewModels.TestActViewModel>();
+
+      Mvx.RegisterSingleton<IMvxAppStart>(new MvxAppStart<ViewModels.MainActivityViewModel>());
     }
   }
 }
