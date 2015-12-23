@@ -41,10 +41,13 @@
       var viewModel = loaderService.LoadViewModel(request, null /* saved state */);
 
       if (viewModel is CalendarViewModel) {
+        CalendarView v;
         SupportFragmentManager.BeginTransaction()
-          .Replace(Droid.Resource.Id.panel_left, new CalendarView())
+          .Replace(Droid.Resource.Id.panel_left, v = new CalendarView())
           .AddToBackStack(null)
           .Commit();
+        v.ViewModel = new CalendarViewModel();
+
         return true;
       }
       else if (viewModel is ClientViewModel) {

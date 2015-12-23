@@ -1,4 +1,6 @@
-﻿namespace MyFitnesser.Droid.Views {
+﻿using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+
+namespace MyFitnesser.Droid.Views {
   using System;
   using System.Collections.Generic;
   using System.Linq;
@@ -28,7 +30,9 @@
     }
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-      return inflater.Inflate(MyFitnesser.Droid.Resource.Layout.Calendar, container, false);
+      //var ignored = inflater.Inflate(MyFitnesser.Droid.Resource.Layout.Calendar, container, false);
+      base.OnCreateView(inflater, container, savedInstanceState);
+      return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.Calendar, null);
     }
 
 
@@ -41,16 +45,28 @@
   public class CalendarInnerView: View {
 
     public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs, int defStyle): base(context, attrs, defStyle) {
-
+      
     }
 
     public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs): base(context, attrs) {
-    
+      
     }
 
     public CalendarInnerView(Context context): base(context) {
-    
+      
     }
+
+    public int Prop { 
+      set {
+        _Prop = value;
+        Invalidate();
+      }
+      get {
+        return _Prop;
+      }
+    }
+
+    private int _Prop = -1;
 
     protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec) {
       //var height = MeasuredWidth / 5 * 24;
@@ -107,7 +123,8 @@
       canvas.DrawRect(new Rect(_HGap + 10, _VGap * 12 + 10, MeasuredWidth, _VGap * 13 + 10), _RectPaint);
       canvas.DrawRect(new Rect(_HGap + 10, _VGap * 12 + 10, _HGap + 13, _VGap * 13 + 10), _RectStrokePaint);
 
-      canvas.DrawText("Залипукин Иван Дормидонтович", _HGap + 10 + 8, _VGap * 12 + 10 + 5 + _TitlePaint.TextSize, _TitlePaint);
+      //canvas.DrawText("Залипукин Иван Дормидонтович", _HGap + 10 + 8, _VGap * 12 + 10 + 5 + _TitlePaint.TextSize, _TitlePaint);
+      canvas.DrawText("Prop: " + Prop.ToString(), _HGap + 10 + 8, _VGap * 12 + 10 + 5 + _TitlePaint.TextSize, _TitlePaint);
     }
 
     private Paint _LinesPaint = new Paint();

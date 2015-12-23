@@ -71,12 +71,12 @@
     <Compile Include="Database\ClientRecord.cs" />
     <Compile Include="Database\RecordBase.cs" />
     <Compile Include="Database\TrainRecord.cs" />
-    <Compile Include="ViewModels\CalendarViewModel.cs" />
     <Compile Include="ViewModels\ClientsListViewModel.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="ViewModels\ViewTypes.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\MainActivityViewModel.cs" />
+    <Compile Include="ViewModels\CalendarViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyFitnesser.Core.csproj" />
