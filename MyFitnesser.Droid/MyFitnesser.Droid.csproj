@@ -83,6 +83,7 @@
     <Compile Include="CustomPresenter.cs" />
     <Compile Include="Views\MainActivityView.cs" />
     <Compile Include="Views\SplashView.cs" />
+    <Compile Include="Controls\CalendarInnerView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -109,6 +110,7 @@
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
     <Folder Include="Resources\layout\" />
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ItemGroup>

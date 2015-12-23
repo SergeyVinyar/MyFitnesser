@@ -13,12 +13,10 @@
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-    <!--
-        <MyFitnesser.Droid.Views.CalendarInnerView
+        <CalendarInnerView
             android:id="@+id/CalendarInnerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             local:MvxBind="Prop ModelProp" />
--->
     </ScrollView>
 </LinearLayout>
