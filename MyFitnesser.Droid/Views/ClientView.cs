@@ -13,7 +13,7 @@
   using Android.Views;
   using Android.Widget;
 
-  using Cirrious.MvvmCross.Droid.Fragging.Fragments;
+  using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
 
 
   public class ClientView: MvxFragment {

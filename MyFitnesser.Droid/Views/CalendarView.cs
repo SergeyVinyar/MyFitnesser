@@ -19,7 +19,7 @@ namespace MyFitnesser.Droid.Views {
   using Android.Graphics.Drawables.Shapes;
   using Android.Graphics;
 
-  using Cirrious.MvvmCross.Droid.Fragging.Fragments;
+  using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
 
 
   public class CalendarView : MvxFragment {

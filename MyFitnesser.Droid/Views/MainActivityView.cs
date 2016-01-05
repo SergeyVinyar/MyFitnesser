@@ -11,13 +11,13 @@
 
   using Cirrious.CrossCore;
   using Cirrious.MvvmCross.Droid.Views;
-  using Cirrious.MvvmCross.Droid.Fragging;
+  using Cirrious.MvvmCross.Droid.FullFragging;
   using Cirrious.MvvmCross.ViewModels;
 
   using Core.ViewModels;
 
   [Activity]
-  internal class MainActivityView : MvxFragmentActivity, IFragmentHost {
+  internal class MainActivityView : MvxActivity, IFragmentHost {
 
     protected override void OnCreate(Bundle bundle)	{
       base.OnCreate(bundle);
@@ -42,7 +42,7 @@
 
       if (viewModel is CalendarViewModel) {
         CalendarView v;
-        SupportFragmentManager.BeginTransaction()
+        FragmentManager.BeginTransaction()
           .Replace(Droid.Resource.Id.panel_left, v = new CalendarView())
           .AddToBackStack(null)
           .Commit();
@@ -54,7 +54,7 @@
         var panelId = Droid.Resource.Id.panel_left;
         if (HasTwoPanels)
           panelId = Droid.Resource.Id.panel_right;
-        SupportFragmentManager.BeginTransaction()
+        FragmentManager.BeginTransaction()
           .Replace(panelId, new ClientView())
           .AddToBackStack(null)
           .Commit();
