@@ -15,7 +15,7 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>MyFitnesser.Droid</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,7 +73,6 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\CalendarView.cs" />
     <Compile Include="Views\ClientView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Setup.cs" />
@@ -81,6 +80,8 @@
     <Compile Include="Views\MainActivityView.cs" />
     <Compile Include="Views\SplashView.cs" />
     <Compile Include="Controls\CalendarInnerView.cs" />
+    <Compile Include="Views\CalendarDaysView.cs" />
+    <Compile Include="Views\CalendarYearsView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -99,10 +100,12 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\Icon.png" />
     <AndroidResource Include="Resources\values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\layout-sw600dp-land\Main.axml" />
-    <AndroidResource Include="Resources\layout\Calendar.axml" />
     <AndroidResource Include="Resources\layout\Client.axml" />
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\layout\Splash.axml" />
+    <AndroidResource Include="Resources\layout\CalendarYears.axml" />
+    <AndroidResource Include="Resources\layout\CalendarDays.axml" />
+    <AndroidResource Include="Resources\layout\CalendarDay.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -114,6 +117,10 @@
     <ProjectReference Include="..\MyFitnesser.Core\MyFitnesser.Core.csproj">
       <Project>{47E011BC-014E-496F-9A24-C96F7EFF1344}</Project>
       <Name>MyFitnesser.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bindings.Droid\Bindings.Droid.csproj">
+      <Project>{B7748ADC-59AE-4800-9DEA-91CE95C64D43}</Project>
+      <Name>Bindings.Droid</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -21,26 +21,36 @@ namespace MyFitnesser.Droid.Views {
 
   using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
 
+  using Core.ViewModels;
 
-  public class CalendarView : MvxFragment {
+  public class CalendarDaysView : MvxFragment, ActionBar.IOnNavigationListener {
   
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
 
+      this.Activity.ActionBar.SetDisplayShowTitleEnabled(false);
+      this.Activity.ActionBar.NavigationMode = ActionBarNavigationMode.List;
+      this.Activity.ActionBar.SetListNavigationCallbacks(new ArrayAdapter<string>(this.Activity, Android.Resource.Layout.SimpleListItem1, new[] { "День", "Год" } ), this);
+      this.Activity.ActionBar.SetSelectedNavigationItem(0); // День
     }
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-      //var ignored = inflater.Inflate(MyFitnesser.Droid.Resource.Layout.Calendar, container, false);
       base.OnCreateView(inflater, container, savedInstanceState);
-      return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.Calendar, null);
+      return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.CalendarDays, null);
     }
-
 
     public override void OnResume() {
       base.OnResume();
     }
 
-  }
+    bool ActionBar.IOnNavigationListener.OnNavigationItemSelected(int itemPosition, long itemId) {
+      if (itemId == 1) {
+        (ViewModel as CalendarDaysViewModel).ShowYear();
+        return true;
+      }
+      return false;
+    }
 
+  }
 }
 

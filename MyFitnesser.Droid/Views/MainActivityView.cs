@@ -40,14 +40,22 @@
       var loaderService = Mvx.Resolve<IMvxViewModelLoader>();
       var viewModel = loaderService.LoadViewModel(request, null /* saved state */);
 
-      if (viewModel is CalendarViewModel) {
-        CalendarView v;
+      if (viewModel is CalendarDaysViewModel) {
+        CalendarDaysView v;
         FragmentManager.BeginTransaction()
-          .Replace(Droid.Resource.Id.panel_left, v = new CalendarView())
+          .Replace(Droid.Resource.Id.panel_left, v = new CalendarDaysView())
           .AddToBackStack(null)
           .Commit();
-        v.ViewModel = new CalendarViewModel();
-
+        v.ViewModel = viewModel;
+        return true;
+      }
+      if (viewModel is CalendarYearsViewModel) {
+        CalendarYearsView v;
+        FragmentManager.BeginTransaction()
+          .Replace(Droid.Resource.Id.panel_left, v = new CalendarYearsView())
+          .AddToBackStack(null)
+          .Commit();
+        v.ViewModel = viewModel;
         return true;
       }
       else if (viewModel is ClientViewModel) {

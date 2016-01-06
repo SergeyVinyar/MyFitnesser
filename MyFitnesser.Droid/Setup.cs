@@ -1,4 +1,6 @@
 namespace MyFitnesser.Droid {
+  using System.Collections.Generic;
+  using System.Reflection;
   using Android.Content;
   using Cirrious.CrossCore;
   using Cirrious.CrossCore.Platform;
@@ -20,12 +22,24 @@ namespace MyFitnesser.Droid {
       var customPresenter = Mvx.IocConstruct<CustomPresenter>();
       Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
 
-      customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarViewModel));
+      customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarDaysViewModel));
+      customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarYearsViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientsListViewModel));
 
       return customPresenter;
     }
+
+    protected override IList<Assembly> AndroidViewAssemblies
+    {
+      get 
+      {
+        var assemblies = base.AndroidViewAssemblies;
+        assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
+        return assemblies;
+      }
+    }
+
 
 //    protected override IMvxTrace CreateDebugTrace() {
 //      return new DebugTrace();

@@ -6,19 +6,8 @@
   public class MainActivityViewModel: MvxViewModel {
 
     public void InitViews() {
-      ShowViewModel<CalendarViewModel>();
+      ShowViewModel<CalendarDaysViewModel>();
     }
-
-    public string sModelProp { 
-      get { 
-        return _sModelProp;
-      } 
-      set { 
-        _sModelProp = value; 
-        RaisePropertyChanged(() => sModelProp); 
-      } 
-    }
-    private string _sModelProp = "Hello from MainActivityViewModel";
 
   }
 }

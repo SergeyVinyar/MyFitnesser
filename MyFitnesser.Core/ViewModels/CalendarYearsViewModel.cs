@@ -3,13 +3,29 @@
   using Cirrious.MvvmCross.ViewModels;
 
 
-  public class CalendarViewModel : MvxViewModel {
+  public class CalendarYearsViewModel : MvxViewModel {
 
-    public CalendarViewModel() : base() {
+    public CalendarYearsViewModel() : base() {
       ModelProp = 666;
       sModelProp = "Hello from CalendarViewModel";
 
     }
+
+    public void ShowDay() {
+      ShowViewModel<CalendarDaysViewModel>();
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     public int ModelProp { 
       get { 

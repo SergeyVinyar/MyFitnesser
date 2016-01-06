@@ -1,18 +1,19 @@
-﻿using Android.Graphics;
-
-namespace MyFitnesser.Droid.Controls {
+﻿namespace MyFitnesser.Droid.Controls {
   using System;
   using System.Collections.Generic;
   using System.Linq;
   using System.Text;
 
   using Android.App;
+  using Android.Graphics;
   using Android.Content;
   using Android.OS;
   using Android.Runtime;
   using Android.Util;
   using Android.Views;
   using Android.Widget;
+
+  using Core.ViewModels;
 
   public class CalendarInnerView: View {
 
@@ -28,22 +29,30 @@ namespace MyFitnesser.Droid.Controls {
 
     }
 
-    public int Prop { 
+    public DateTime Date { 
       set {
-        _Prop = value;
+        _Date = value;
         Invalidate();
       }
       get {
-        return _Prop;
+        return _Date;
       }
     }
+    private DateTime _Date;
 
-    private int _Prop = -1;
+    public CalendarDayViewModel.Train[] Trains { 
+      set {
+        _Trains = value;
+        Invalidate();
+      }
+      get {
+        return _Trains;
+      }
+    }
+    private CalendarDayViewModel.Train[] _Trains;
+
 
     protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-      //var height = MeasuredWidth / 5 * 24;
-      //SetMeasuredDimension(MeasuredWidth, height);
-
       int widthSize = MeasureSpec.GetSize(widthMeasureSpec);
 
       MeasureSpecMode heightMode = MeasureSpec.GetMode(heightMeasureSpec);
@@ -96,7 +105,7 @@ namespace MyFitnesser.Droid.Controls {
       canvas.DrawRect(new Rect(_HGap + 10, _VGap * 12 + 10, _HGap + 13, _VGap * 13 + 10), _RectStrokePaint);
 
       //canvas.DrawText("Залипукин Иван Дормидонтович", _HGap + 10 + 8, _VGap * 12 + 10 + 5 + _TitlePaint.TextSize, _TitlePaint);
-      canvas.DrawText("Prop: " + Prop.ToString(), _HGap + 10 + 8, _VGap * 12 + 10 + 5 + _TitlePaint.TextSize, _TitlePaint);
+      canvas.DrawText("Date: " + Date.ToShortDateString(), _HGap + 10 + 8, _VGap * 12 + 10 + 5 + _TitlePaint.TextSize, _TitlePaint);
     }
 
     private Paint _LinesPaint = new Paint();

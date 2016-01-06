@@ -5,18 +5,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:actionBarNavMode="tabs">
+    tools:actionBarNavMode="list">
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        local:MvxBind="Text sModelProp" />
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <CalendarInnerView
-            android:id="@+id/CalendarInnerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            local:MvxBind="Prop ModelProp" />
-    </ScrollView>
+        android:text="Год" />
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/calendarView1"
+        android:showWeekNumber="false"
+        android:layoutMode="opticalBounds"
+        android:padding="8dp" />
 </LinearLayout>
