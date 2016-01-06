@@ -1,26 +1,36 @@
-﻿using System.Windows.Input;
-
-namespace MyFitnesser.Core.ViewModels {
+﻿namespace MyFitnesser.Core.ViewModels {
   using System;
   using System.Collections.Generic;
   using System.Collections.ObjectModel;
   using System.Linq;
+  using System.Windows.Input;
 
   using Cirrious.MvvmCross.ViewModels;
+
+  using MyFitnesser.Core.Utils;
 
 
   public class CalendarDaysViewModel : MvxViewModel {
 
     public CalendarDaysViewModel() : base() {
       CurrentDate = DateTime.Now.Date;
-      var days = new ObservableCollection<CalendarDayViewModel>();
-      days.Add(new CalendarDayViewModel(CurrentDate.AddDays(-1)));
-      days.Add(new CalendarDayViewModel(CurrentDate));
-      days.Add(new CalendarDayViewModel(CurrentDate.AddDays(+1)));
+      var days = new SuspendableObservableCollection<CalendarDayViewModel>();
+      for (int i = 0; i < ViewPagerCapacity; i++)
+        days.Add(null);
+      var middleIndex = ViewPagerCapacity / 2;
+      days.Suspend();
+      try {
+        days[middleIndex - 1] = new CalendarDayViewModel(CurrentDate.AddDays(-1));
+        days[middleIndex]     = new CalendarDayViewModel(CurrentDate);
+        days[middleIndex + 1] = new CalendarDayViewModel(CurrentDate.AddDays(+1));
+      }
+      finally {
+        days.Resume();
+      }
       Days = days;
     }
 
-    public ObservableCollection<CalendarDayViewModel> Days {
+    public SuspendableObservableCollection<CalendarDayViewModel> Days {
       get { return _Days; }
       set
       {
@@ -28,27 +38,27 @@ namespace MyFitnesser.Core.ViewModels {
         RaisePropertyChanged(() => Days);
       }
     }
-    private ObservableCollection<CalendarDayViewModel> _Days;
+    private SuspendableObservableCollection<CalendarDayViewModel> _Days;
 
     public ICommand ItemPageChangedCommand {
       get { return new MvxCommand<CalendarDayViewModel>(ItemPageChanged); }
     }
 
     private void ItemPageChanged(CalendarDayViewModel toPage) {
-      toPage
-
-
       CurrentDate = toPage.Date;
-
-
-
-//      if (toPage == Days.Last())
-//        Days.Add(new CalendarDayViewModel(toPage.Date.AddDays(+1)));
-//      else if (toPage == Days.First()) {
-//        var days = new ObservableCollection<CalendarDayViewModel>();
-//        days.Add(new CalendarDayViewModel(toPage.Date.AddDays(-1)));
-//        Days = new ObservableCollection<CalendarDayViewModel>(days.Concat(Days));
-//      }
+      var index = Days.IndexOf(toPage);
+      if (index == 0 || index == ViewPagerCapacity)
+        return; // OMG!
+      Days.Suspend();
+      try {
+        if (Days[index - 1] == null)
+          Days[index - 1] = new CalendarDayViewModel(toPage.Date.AddDays(-1));
+        if (Days[index + 1] == null)
+          Days[index + 1] = new CalendarDayViewModel(toPage.Date.AddDays(+1));
+      }
+      finally {
+        Days.Resume();
+      }
     }
 
     public void ShowYear() {
@@ -69,7 +79,7 @@ namespace MyFitnesser.Core.ViewModels {
     }
     private DateTime _CurrentDate;
 
-
+    public readonly int ViewPagerCapacity = 400;
   }
 }
 

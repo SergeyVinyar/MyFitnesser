@@ -78,6 +78,7 @@
     <Compile Include="ViewModels\CalendarYearsViewModel.cs" />
     <Compile Include="ViewModels\CalendarDaysViewModel.cs" />
     <Compile Include="ViewModels\CalendarDayViewModel.cs" />
+    <Compile Include="Utils\SuspendableObservableCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyFitnesser.Core.csproj" />
@@ -86,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Database\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="sqlite-net">

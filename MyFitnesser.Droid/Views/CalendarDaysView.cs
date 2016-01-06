@@ -1,6 +1,4 @@
-﻿using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-
-namespace MyFitnesser.Droid.Views {
+﻿namespace MyFitnesser.Droid.Views {
   using System;
   using System.Collections.Generic;
   using System.Linq;
@@ -20,6 +18,9 @@ namespace MyFitnesser.Droid.Views {
   using Android.Graphics;
 
   using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
+  using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+
+  using Cheesebaron.MvvmCross.Bindings.Droid;
 
   using Core.ViewModels;
 
@@ -37,6 +38,12 @@ namespace MyFitnesser.Droid.Views {
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       base.OnCreateView(inflater, container, savedInstanceState);
       return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.CalendarDays, null);
+    }
+
+    public override void OnStart() {
+      base.OnStart();
+      var viewPager = this.Activity.FindViewById<BindableViewPager>(Droid.Resource.Id.CalendarDaysPagerView);
+      viewPager.SetCurrentItem((ViewModel as CalendarDaysViewModel).ViewPagerCapacity / 2, false);
     }
 
     public override void OnResume() {
