@@ -1,17 +1,17 @@
-﻿namespace MyFitnesser.Core {
+﻿namespace MyFitnesser.Core.Database {
   using System;
   using SQLite;
 
 
   internal class TrainRecord : RecordBase<TrainRecord> {
 
-    public int ClientId { get; set; }
+    public Guid ClientId { get; set; }
 
-    public DateTime Date { get; set; }
+    public DateTime StartDate { get; set; }
 
-    public TimeSpan Duration { get; set; }
+    public DateTime EndDate { get; set; }
 
-    public int Status { get; set; }
+    public TrainStatuses Status { get; set; }
 
     [MaxLength(2000)]
     public string Notes { get; set; }

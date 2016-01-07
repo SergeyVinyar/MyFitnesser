@@ -1,4 +1,4 @@
-﻿namespace MyFitnesser.Core {
+﻿namespace MyFitnesser.Core.Database {
   using System;
   using System.Threading.Tasks;
   using System.Linq;
@@ -6,11 +6,11 @@
 
   public class RecordBase<T> where T: new() {
     
-    [PrimaryKey]
+    [PrimaryKey, Unique]
     public Guid Id { get; set; }
 
     public static void CreateTable() {
-      //DbConnection.Get().CreateTable<T>();
+      DbConnection.Get().CreateTable<T>();
     }
 
     public static IQueryable<T> Records() {

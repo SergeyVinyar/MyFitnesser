@@ -1,4 +1,4 @@
-﻿namespace MyFitnesser.Core {
+﻿namespace MyFitnesser.Core.Database {
   using System;
   using SQLite;
 

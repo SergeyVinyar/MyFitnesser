@@ -26,14 +26,14 @@
 
     protected override void OnStart() {
       base.OnStart();
-      Core.DbInit.Start();
+      Core.Database.DbInit.Start();
 
       (DataContext as MainActivityViewModel).InitViews();
     }
 
     protected override void OnStop() {
       base.OnStop();
-      Core.DbInit.Stop();
+      Core.Database.DbInit.Stop();
     }
 
     public bool Show(MvxViewModelRequest request) {
