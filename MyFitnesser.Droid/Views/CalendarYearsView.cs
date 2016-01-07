@@ -33,6 +33,9 @@ namespace MyFitnesser.Droid.Views {
       this.Activity.ActionBar.NavigationMode = ActionBarNavigationMode.List;
       this.Activity.ActionBar.SetListNavigationCallbacks(new ArrayAdapter<string>(this.Activity, Android.Resource.Layout.SimpleListItem1, new[] { "День", "Год" } ), this);
       this.Activity.ActionBar.SetSelectedNavigationItem(1); // Год
+
+      if (this.ViewModel == null)
+        this.ViewModel = new CalendarYearsViewModel();
     }
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

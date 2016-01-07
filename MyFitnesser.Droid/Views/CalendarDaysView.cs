@@ -33,6 +33,9 @@
       this.Activity.ActionBar.NavigationMode = ActionBarNavigationMode.List;
       this.Activity.ActionBar.SetListNavigationCallbacks(new ArrayAdapter<string>(this.Activity, Android.Resource.Layout.SimpleListItem1, new[] { "День", "Год" } ), this);
       this.Activity.ActionBar.SetSelectedNavigationItem(0); // День
+
+      if (this.ViewModel == null)
+        this.ViewModel = new CalendarDaysViewModel();
     }
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

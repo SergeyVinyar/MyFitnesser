@@ -17,13 +17,22 @@
   using Core.ViewModels;
 
 
-  public class CalendarInnerView: View {
+  public class CalendarInnerView: View, GestureDetector.IOnGestureListener {
 
-    public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs, int defStyle): base(context, attrs, defStyle) { }
+    public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs, int defStyle): base(context, attrs, defStyle) {
+      _GestureDetector = new GestureDetector(this);
+      _GestureDetector.IsLongpressEnabled = true;
+    }
 
-    public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs): base(context, attrs) { }
+    public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs): base(context, attrs) { 
+      _GestureDetector = new GestureDetector(this);
+      _GestureDetector.IsLongpressEnabled = true;
+    }
 
-    public CalendarInnerView(Context context): base(context) { }
+    public CalendarInnerView(Context context): base(context) { 
+      _GestureDetector = new GestureDetector(this);
+      _GestureDetector.IsLongpressEnabled = true;
+    }
 
     public DateTime Date { 
       set {
@@ -125,6 +134,12 @@
       }
     }
 
+    public override bool OnTouchEvent(MotionEvent e) {
+      if (_GestureDetector.OnTouchEvent(e))
+        return true;
+      return true;
+    }
+
     private int GetVPosOfTime(DateTime time) {
       var result = _PageTitleHeight;
       result += _VGap * time.Hour;
@@ -146,7 +161,30 @@
     private int _Width;
     private int _Height;
 
+    private GestureDetector _GestureDetector;
+
+    bool GestureDetector.IOnGestureListener.OnDown(MotionEvent e) {
+      return false;
+    }
+    bool GestureDetector.IOnGestureListener.OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+      return false;
+    }
+    void GestureDetector.IOnGestureListener.OnLongPress(MotionEvent e) {
+      var x = e.GetX();
+      var y = e.GetY();
+    }
+    bool GestureDetector.IOnGestureListener.OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+      return false;
+    }
+    void GestureDetector.IOnGestureListener.OnShowPress(MotionEvent e) {
+      
+    }
+    bool GestureDetector.IOnGestureListener.OnSingleTapUp(MotionEvent e) {
+      return false;
+    }
+
   }
+
 
 }
 
