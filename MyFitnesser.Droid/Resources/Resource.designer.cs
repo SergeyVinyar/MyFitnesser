@@ -26,21 +26,63 @@ namespace MyFitnesser.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxBind = global::MyFitnesser.Droid.Resource.Attribute.MvxBind;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxDropDownItemTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxGroupItemTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxItemTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxLang = global::MyFitnesser.Droid.Resource.Attribute.MvxLang;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxSource = global::MyFitnesser.Droid.Resource.Attribute.MvxSource;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Attribute.MvxTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Id.MvvmCrossTagId = global::MyFitnesser.Droid.Resource.Id.MvvmCrossTagId;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Id.MvxBindingTagUnique = global::MyFitnesser.Droid.Resource.Id.MvxBindingTagUnique;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding = global::MyFitnesser.Droid.Resource.Styleable.MvxBinding;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxBind = global::MyFitnesser.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxBinding_MvxLang = global::MyFitnesser.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxControl = global::MyFitnesser.Droid.Resource.Styleable.MvxControl;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxControl_MvxTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView = global::MyFitnesser.Droid.Resource.Styleable.MvxExpandableListView;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView = global::MyFitnesser.Droid.Resource.Styleable.MvxImageView;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxImageView_MvxSource = global::MyFitnesser.Droid.Resource.Styleable.MvxImageView_MvxSource;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView = global::MyFitnesser.Droid.Resource.Styleable.MvxListView;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::Cirrious.MvvmCross.Binding.Droid.Resource.Styleable.MvxListView_MvxItemTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxBind = global::MyFitnesser.Droid.Resource.Attribute.MvxBind;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxDropDownItemTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxDropDownItemTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxGroupItemTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxGroupItemTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxItemTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxItemTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxLang = global::MyFitnesser.Droid.Resource.Attribute.MvxLang;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxSource = global::MyFitnesser.Droid.Resource.Attribute.MvxSource;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Attribute.MvxTemplate = global::MyFitnesser.Droid.Resource.Attribute.MvxTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Id.MvvmCrossTagId = global::MyFitnesser.Droid.Resource.Id.MvvmCrossTagId;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Id.MvxBindingTagUnique = global::MyFitnesser.Droid.Resource.Id.MvxBindingTagUnique;
 			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.String.ApplicationName = global::MyFitnesser.Droid.Resource.String.ApplicationName;
 			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.String.Hello = global::MyFitnesser.Droid.Resource.String.Hello;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxBinding = global::MyFitnesser.Droid.Resource.Styleable.MvxBinding;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxBinding_MvxBind = global::MyFitnesser.Droid.Resource.Styleable.MvxBinding_MvxBind;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxBinding_MvxLang = global::MyFitnesser.Droid.Resource.Styleable.MvxBinding_MvxLang;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxControl = global::MyFitnesser.Droid.Resource.Styleable.MvxControl;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxControl_MvxTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxControl_MvxTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxExpandableListView = global::MyFitnesser.Droid.Resource.Styleable.MvxExpandableListView;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxExpandableListView_MvxGroupItemTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxImageView = global::MyFitnesser.Droid.Resource.Styleable.MvxImageView;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxImageView_MvxSource = global::MyFitnesser.Droid.Resource.Styleable.MvxImageView_MvxSource;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxListView = global::MyFitnesser.Droid.Resource.Styleable.MvxListView;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxListView_MvxDropDownItemTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxListView_MvxDropDownItemTemplate;
+			global::Cirrious.MvvmCross.Droid.FullFragging.Resource.Styleable.MvxListView_MvxItemTemplate = global::MyFitnesser.Droid.Resource.Styleable.MvxListView_MvxItemTemplate;
 		}
 		
 		public partial class Attribute
 		{
-			
-			// aapt resource value: 0x7f010005
-			public const int GroupItemTemplate = 2130771973;
 			
 			// aapt resource value: 0x7f010000
 			public const int MvxBind = 2130771968;
 			
 			// aapt resource value: 0x7f010004
 			public const int MvxDropDownItemTemplate = 2130771972;
+			
+			// aapt resource value: 0x7f010005
+			public const int MvxGroupItemTemplate = 2130771973;
 			
 			// aapt resource value: 0x7f010003
 			public const int MvxItemTemplate = 2130771971;
@@ -67,41 +109,44 @@ namespace MyFitnesser.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050003
+			public const int CalendarDaysPagerView = 2131034115;
+			
 			// aapt resource value: 0x7f050002
-			public const int CalendarDaysPagerView = 2131034114;
-			
-			// aapt resource value: 0x7f050001
-			public const int CalendarInnerView = 2131034113;
-			
-			// aapt resource value: 0x7f050004
-			public const int ClientButtonSeparator = 2131034116;
+			public const int CalendarInnerView = 2131034114;
 			
 			// aapt resource value: 0x7f050005
-			public const int ClientCancelButton = 2131034117;
+			public const int ClientButtonSeparator = 2131034117;
 			
 			// aapt resource value: 0x7f050006
-			public const int ClientWriteButton = 2131034118;
-			
-			// aapt resource value: 0x7f050000
-			public const int MvxBindingTagUnique = 2131034112;
-			
-			// aapt resource value: 0x7f050009
-			public const int TrainButtonSeparator = 2131034121;
-			
-			// aapt resource value: 0x7f05000a
-			public const int TrainCancelButton = 2131034122;
-			
-			// aapt resource value: 0x7f05000b
-			public const int TrainWriteButton = 2131034123;
-			
-			// aapt resource value: 0x7f050003
-			public const int calendarView1 = 2131034115;
+			public const int ClientCancelButton = 2131034118;
 			
 			// aapt resource value: 0x7f050007
-			public const int panel_left = 2131034119;
+			public const int ClientWriteButton = 2131034119;
+			
+			// aapt resource value: 0x7f050000
+			public const int MvvmCrossTagId = 2131034112;
+			
+			// aapt resource value: 0x7f050001
+			public const int MvxBindingTagUnique = 2131034113;
+			
+			// aapt resource value: 0x7f05000a
+			public const int TrainButtonSeparator = 2131034122;
+			
+			// aapt resource value: 0x7f05000b
+			public const int TrainCancelButton = 2131034123;
+			
+			// aapt resource value: 0x7f05000c
+			public const int TrainWriteButton = 2131034124;
+			
+			// aapt resource value: 0x7f050004
+			public const int calendarView1 = 2131034116;
 			
 			// aapt resource value: 0x7f050008
-			public const int panel_right = 2131034120;
+			public const int panel_left = 2131034120;
+			
+			// aapt resource value: 0x7f050009
+			public const int panel_right = 2131034121;
 			
 			static Id()
 			{
@@ -205,7 +250,7 @@ namespace MyFitnesser.Droid
 					2130771973};
 			
 			// aapt resource value: 0
-			public const int MvxExpandableListView_GroupItemTemplate = 0;
+			public const int MvxExpandableListView_MvxGroupItemTemplate = 0;
 			
 			public static int[] MvxImageView = new int[] {
 					2130771974};

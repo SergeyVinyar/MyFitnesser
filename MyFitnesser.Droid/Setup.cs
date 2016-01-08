@@ -31,11 +31,11 @@ namespace MyFitnesser.Droid {
       return customPresenter;
     }
 
-    protected override IList<Assembly> AndroidViewAssemblies
+    protected override IEnumerable<Assembly> AndroidViewAssemblies
     {
       get 
       {
-        var assemblies = base.AndroidViewAssemblies;
+        var assemblies = new List<Assembly>(base.AndroidViewAssemblies);
         assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
         return assemblies;
       }

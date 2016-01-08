@@ -6,8 +6,8 @@
   public class MainActivityViewModel: MvxViewModel {
 
     public void InitViews() {
-      ////////////////ShowViewModel<CalendarDaysViewModel>();
-      ShowViewModel<TrainViewModel>();
+      ShowViewModel<CalendarDaysViewModel>();
+      //////////ShowViewModel<TrainViewModel>();
     }
 
   }

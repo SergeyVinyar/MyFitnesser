@@ -176,7 +176,7 @@ namespace Cheesebaron.MvvmCross.Bindings.Droid
 
         protected virtual View CreateSimpleView(object source)
         {
-            var view = _bindingContext.LayoutInflater.LayoutInflater.Inflate(SimpleViewLayoutId, null);
+            var view = _bindingContext.LayoutInflaterHolder.LayoutInflater.Inflate(SimpleViewLayoutId, null);
             BindSimpleView(view, source);
             return view;
         }
@@ -215,7 +215,7 @@ namespace Cheesebaron.MvvmCross.Bindings.Droid
 
         protected virtual MvxListItemView CreateBindableView(object dataContext, int templateId)
         {
-            return new MvxListItemView(_context, _bindingContext.LayoutInflater, dataContext, templateId);
+      return new MvxListItemView(_context, _bindingContext.LayoutInflaterHolder, dataContext, templateId);
         }
 
         public override Java.Lang.Object InstantiateItem(ViewGroup container, int position)
