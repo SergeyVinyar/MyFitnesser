@@ -14,29 +14,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:hint="ФИО клиента"
+                android:hint="Клиент"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text Name" />
+                android:layout_height="wrap_content" />
             <EditText
-                android:hint="Телефон"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                local:MvxBind="Text Phone" />
-            <EditText
-                android:hint="EMail"
-                android:inputType="textEmailAddress"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text EMail" />
-            <EditText
-                android:hint="День рождения"
+                android:hint="День начала"
                 android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                local:MvxBind="Text Birthday" />
+                local:MvxBind="Text StartDate" />
+            <EditText
+                android:hint="День окончания"
+                android:inputType="date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                local:MvxBind="Text EndDate" />
             <EditText
                 android:hint="Примечание"
                 android:inputType="textMultiLine"
@@ -51,7 +44,7 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true">
         <View
-            android:id="@+id/ClientButtonSeparator"
+            android:id="@+id/TrainButtonSeparator"
             android:layout_width="1dip"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -61,23 +54,23 @@
             android:background="?android:attr/dividerVertical"
             android:layout_centerHorizontal="true" />
         <Button
-            android:id="@+id/ClientCancelButton"
+            android:id="@+id/TrainCancelButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@id/ClientButtonSeparator"
+            android:layout_toLeftOf="@id/TrainButtonSeparator"
             android:background="?android:attr/selectableItemBackground"
             android:text="@android:string/cancel"
             android:layout_alignParentBottom="true"
             local:MvxBind="Click CloseCommand" />
         <Button
-            android:id="@+id/ClientWriteButton"
+            android:id="@+id/TrainWriteButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/ClientButtonSeparator"
+            android:layout_toRightOf="@id/TrainButtonSeparator"
             android:background="?android:attr/selectableItemBackground"
             android:text="@android:string/ok"
             android:layout_alignParentBottom="true"

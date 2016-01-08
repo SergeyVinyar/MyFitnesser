@@ -19,29 +19,26 @@
   using Core.ViewModels;
 
 
-  public class ClientView: MvxFragment {
+  public class TrainView: MvxFragment {
 
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
 
       if (this.ViewModel == null)
-        this.ViewModel = new ClientViewModel();
+        this.ViewModel = new TrainViewModel();
     }
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       base.OnCreateView(inflater, container, savedInstanceState);
-      return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.Client, null);
+      return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.Train, null);
     }
 
     public override void OnStart() {
       base.OnStart();
-    
-
     }
 
     public override void OnStop() {
       base.OnStop();
-    
     }
 
   }

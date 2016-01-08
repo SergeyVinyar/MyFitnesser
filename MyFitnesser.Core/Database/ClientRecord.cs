@@ -3,7 +3,7 @@
   using SQLite;
 
 
-  internal class ClientRecord : RecordBase<ClientRecord> {
+  public class ClientRecord : RecordBase<ClientRecord> {
 
     [MaxLength(256)]
     public string Name { get; set; }

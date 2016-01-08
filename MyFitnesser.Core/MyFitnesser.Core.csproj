@@ -80,6 +80,7 @@
     <Compile Include="ViewModels\CalendarDayViewModel.cs" />
     <Compile Include="Utils\SuspendableObservableCollection.cs" />
     <Compile Include="Database\DbVersionRecord.cs" />
+    <Compile Include="ViewModels\TrainViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyFitnesser.Core.csproj" />

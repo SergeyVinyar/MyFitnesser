@@ -82,6 +82,7 @@
     <Compile Include="Controls\CalendarInnerView.cs" />
     <Compile Include="Views\CalendarDaysView.cs" />
     <Compile Include="Views\CalendarYearsView.cs" />
+    <Compile Include="Views\TrainView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -106,6 +107,7 @@
     <AndroidResource Include="Resources\layout\CalendarYears.axml" />
     <AndroidResource Include="Resources\layout\CalendarDays.axml" />
     <AndroidResource Include="Resources\layout\CalendarDay.axml" />
+    <AndroidResource Include="Resources\layout\Train.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

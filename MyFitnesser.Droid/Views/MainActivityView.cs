@@ -59,13 +59,27 @@
         return true;
       }
       else if (viewModel is ClientViewModel) {
+        ClientView v;
         var panelId = Droid.Resource.Id.panel_left;
         if (HasTwoPanels)
           panelId = Droid.Resource.Id.panel_right;
         FragmentManager.BeginTransaction()
-          .Replace(panelId, new ClientView())
+          .Replace(panelId, v = new ClientView())
           .AddToBackStack(null)
           .Commit();
+        v.ViewModel = viewModel;
+        return true;
+      }
+      else if (viewModel is TrainViewModel) {
+        TrainView v;
+        var panelId = Droid.Resource.Id.panel_left;
+        if (HasTwoPanels)
+          panelId = Droid.Resource.Id.panel_right;
+        FragmentManager.BeginTransaction()
+          .Replace(panelId, v = new TrainView())
+          .AddToBackStack(null)
+          .Commit();
+        v.ViewModel = viewModel;
         return true;
       }
       else if (viewModel is ClientsListViewModel) {

@@ -3,7 +3,7 @@
   using SQLite;
 
 
-  internal class DbVersionRecord : RecordBase<DbVersionRecord> {
+  public class DbVersionRecord : RecordBase<DbVersionRecord> {
 
     public int Version { get; set; }
   }

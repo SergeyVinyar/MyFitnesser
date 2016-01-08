@@ -25,6 +25,7 @@ namespace MyFitnesser.Droid {
       customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarDaysViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarYearsViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientViewModel));
+      customPresenter.RegisterFragment(typeof(Core.ViewModels.TrainViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientsListViewModel));
 
       return customPresenter;

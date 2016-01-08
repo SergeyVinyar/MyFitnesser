@@ -3,7 +3,7 @@
   using SQLite;
 
 
-  internal class TrainRecord : RecordBase<TrainRecord> {
+  public class TrainRecord : RecordBase<TrainRecord> {
 
     public Guid ClientId { get; set; }
 
