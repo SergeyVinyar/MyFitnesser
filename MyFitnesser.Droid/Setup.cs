@@ -22,6 +22,7 @@ namespace MyFitnesser.Droid {
       var customPresenter = Mvx.IocConstruct<CustomPresenter>();
       Mvx.RegisterSingleton<ICustomPresenter>(customPresenter);
 
+      customPresenter.RegisterFragment(typeof(Core.ViewModels.MenuViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarDaysViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarYearsViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientViewModel));

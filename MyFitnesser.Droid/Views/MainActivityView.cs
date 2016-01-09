@@ -81,6 +81,15 @@
       var loaderService = Mvx.Resolve<IMvxViewModelLoader>();
       var viewModel = loaderService.LoadViewModel(request, null /* saved state */);
 
+      if (viewModel is MenuViewModel) {
+        MenuView v;
+        FragmentManager.BeginTransaction()
+          .Replace(Droid.Resource.Id.navigation_frame, v = new MenuView())
+          .AddToBackStack(null)
+          .Commit();
+        v.ViewModel = viewModel;
+        return true;
+      }
       if (viewModel is CalendarDaysViewModel) {
         CalendarDaysView v;
         FragmentManager.BeginTransaction()

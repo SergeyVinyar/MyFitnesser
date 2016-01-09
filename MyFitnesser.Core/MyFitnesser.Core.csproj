@@ -75,6 +75,7 @@
     <Compile Include="Utils\SuspendableObservableCollection.cs" />
     <Compile Include="Database\DbVersionRecord.cs" />
     <Compile Include="ViewModels\TrainViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyFitnesser.Core.csproj" />
