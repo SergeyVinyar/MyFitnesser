@@ -7,4 +7,5 @@
     android:layout_gravity="start"
     android:fitsSystemWindows="true"
     android:theme="@style/AppTheme.Menu"
+    local:headerLayout="@layout/menu_header"
     local:menu="@menu/drawer" />

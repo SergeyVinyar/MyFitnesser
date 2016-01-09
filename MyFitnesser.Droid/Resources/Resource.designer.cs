@@ -1495,6 +1495,9 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f060005
 			public const int abc_text_size_title_material_toolbar = 2131099653;
 			
+			// aapt resource value: 0x7f06006d
+			public const int button_login_height = 2131099757;
+			
 			// aapt resource value: 0x7f060054
 			public const int design_appbar_elevation = 2131099732;
 			
@@ -1585,6 +1588,27 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f060045
 			public const int disabled_alpha_material_light = 2131099717;
 			
+			// aapt resource value: 0x7f060074
+			public const int element_margin_huge = 2131099764;
+			
+			// aapt resource value: 0x7f060073
+			public const int element_margin_large = 2131099763;
+			
+			// aapt resource value: 0x7f060072
+			public const int element_margin_medium = 2131099762;
+			
+			// aapt resource value: 0x7f060071
+			public const int element_margin_small = 2131099761;
+			
+			// aapt resource value: 0x7f06006e
+			public const int element_margin_smallest = 2131099758;
+			
+			// aapt resource value: 0x7f06006f
+			public const int element_margin_tinier = 2131099759;
+			
+			// aapt resource value: 0x7f060070
+			public const int element_margin_tiny = 2131099760;
+			
 			// aapt resource value: 0x7f060046
 			public const int highlight_alpha_material_colored = 2131099718;
 			
@@ -1597,6 +1621,24 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_max_drag_scroll_per_frame = 2131099648;
 			
+			// aapt resource value: 0x7f06006c
+			public const int margin_huge = 2131099756;
+			
+			// aapt resource value: 0x7f06006b
+			public const int margin_large = 2131099755;
+			
+			// aapt resource value: 0x7f06006a
+			public const int margin_medium = 2131099754;
+			
+			// aapt resource value: 0x7f060069
+			public const int margin_small = 2131099753;
+			
+			// aapt resource value: 0x7f060068
+			public const int margin_tiny = 2131099752;
+			
+			// aapt resource value: 0x7f060075
+			public const int navigation_drawer_width = 2131099765;
+			
 			// aapt resource value: 0x7f060049
 			public const int notification_large_icon_height = 2131099721;
 			
@@ -1605,6 +1647,27 @@ namespace MyFitnesser.Droid
 			
 			// aapt resource value: 0x7f06004b
 			public const int notification_subtext_size = 2131099723;
+			
+			// aapt resource value: 0x7f06007b
+			public const int text_huge = 2131099771;
+			
+			// aapt resource value: 0x7f06007a
+			public const int text_large = 2131099770;
+			
+			// aapt resource value: 0x7f060079
+			public const int text_medium = 2131099769;
+			
+			// aapt resource value: 0x7f060078
+			public const int text_small = 2131099768;
+			
+			// aapt resource value: 0x7f060076
+			public const int text_tinier = 2131099766;
+			
+			// aapt resource value: 0x7f060077
+			public const int text_tiny = 2131099767;
+			
+			// aapt resource value: 0x7f06007c
+			public const int text_very_huge = 2131099772;
 			
 			static Dimension()
 			{
@@ -1830,7 +1893,10 @@ namespace MyFitnesser.Droid
 			public const int design_snackbar_background = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int notification_template_icon_bg = 2130837574;
+			public const int Logo = 2130837574;
+			
+			// aapt resource value: 0x7f020047
+			public const int notification_template_icon_bg = 2130837575;
 			
 			static Drawable()
 			{
@@ -1866,17 +1932,17 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07000c
 			public const int MvxBindingTagUnique = 2131165196;
 			
-			// aapt resource value: 0x7f07008d
-			public const int TrainButtonSeparator = 2131165325;
+			// aapt resource value: 0x7f070091
+			public const int TrainButtonSeparator = 2131165329;
 			
-			// aapt resource value: 0x7f07008e
-			public const int TrainCancelButton = 2131165326;
+			// aapt resource value: 0x7f070092
+			public const int TrainCancelButton = 2131165330;
 			
-			// aapt resource value: 0x7f07008f
-			public const int TrainWriteButton = 2131165327;
+			// aapt resource value: 0x7f070093
+			public const int TrainWriteButton = 2131165331;
 			
-			// aapt resource value: 0x7f07007e
-			public const int action0 = 2131165310;
+			// aapt resource value: 0x7f070082
+			public const int action0 = 2131165314;
 			
 			// aapt resource value: 0x7f07005c
 			public const int action_bar = 2131165276;
@@ -1902,8 +1968,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07005d
 			public const int action_context_bar = 2131165277;
 			
-			// aapt resource value: 0x7f070082
-			public const int action_divider = 2131165314;
+			// aapt resource value: 0x7f070086
+			public const int action_divider = 2131165318;
 			
 			// aapt resource value: 0x7f070003
 			public const int action_menu_divider = 2131165187;
@@ -1929,8 +1995,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07001f
 			public const int always = 2131165215;
 			
-			// aapt resource value: 0x7f07008b
-			public const int appbar = 2131165323;
+			// aapt resource value: 0x7f07008f
+			public const int appbar = 2131165327;
 			
 			// aapt resource value: 0x7f07001c
 			public const int beginning = 2131165212;
@@ -1944,8 +2010,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07006d
 			public const int calendarView1 = 2131165293;
 			
-			// aapt resource value: 0x7f07007f
-			public const int cancel_action = 2131165311;
+			// aapt resource value: 0x7f070083
+			public const int cancel_action = 2131165315;
 			
 			// aapt resource value: 0x7f07002d
 			public const int center = 2131165229;
@@ -1959,8 +2025,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070054
 			public const int checkbox = 2131165268;
 			
-			// aapt resource value: 0x7f070085
-			public const int chronometer = 2131165317;
+			// aapt resource value: 0x7f070089
+			public const int chronometer = 2131165321;
 			
 			// aapt resource value: 0x7f070035
 			public const int clip_horizontal = 2131165237;
@@ -2010,8 +2076,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07001d
 			public const int end = 2131165213;
 			
-			// aapt resource value: 0x7f07008a
-			public const int end_padder = 2131165322;
+			// aapt resource value: 0x7f07008e
+			public const int end_padder = 2131165326;
 			
 			// aapt resource value: 0x7f070025
 			public const int enterAlways = 2131165221;
@@ -2055,8 +2121,11 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070041
 			public const int image = 2131165249;
 			
-			// aapt resource value: 0x7f070089
-			public const int info = 2131165321;
+			// aapt resource value: 0x7f07007e
+			public const int image_view_row_icon = 2131165310;
+			
+			// aapt resource value: 0x7f07008d
+			public const int info = 2131165325;
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
@@ -2064,11 +2133,11 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070031
 			public const int left = 2131165233;
 			
-			// aapt resource value: 0x7f070083
-			public const int line1 = 2131165315;
-			
 			// aapt resource value: 0x7f070087
-			public const int line3 = 2131165319;
+			public const int line1 = 2131165319;
+			
+			// aapt resource value: 0x7f07008b
+			public const int line3 = 2131165323;
 			
 			// aapt resource value: 0x7f07000d
 			public const int listMode = 2131165197;
@@ -2079,8 +2148,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070079
 			public const int main_frame = 2131165305;
 			
-			// aapt resource value: 0x7f070081
-			public const int media_actions = 2131165313;
+			// aapt resource value: 0x7f070085
+			public const int media_actions = 2131165317;
 			
 			// aapt resource value: 0x7f07007d
 			public const int menu = 2131165309;
@@ -2094,26 +2163,26 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070017
 			public const int multiply = 2131165207;
 			
-			// aapt resource value: 0x7f070093
-			public const int nav_clients = 2131165331;
+			// aapt resource value: 0x7f070097
+			public const int nav_clients = 2131165335;
 			
-			// aapt resource value: 0x7f070094
-			public const int nav_footer = 2131165332;
+			// aapt resource value: 0x7f070098
+			public const int nav_footer = 2131165336;
 			
-			// aapt resource value: 0x7f070096
-			public const int nav_helpfeedback = 2131165334;
-			
-			// aapt resource value: 0x7f070091
-			public const int nav_home = 2131165329;
-			
-			// aapt resource value: 0x7f070090
-			public const int nav_items = 2131165328;
-			
-			// aapt resource value: 0x7f070092
-			public const int nav_refbooks = 2131165330;
+			// aapt resource value: 0x7f07009a
+			public const int nav_helpfeedback = 2131165338;
 			
 			// aapt resource value: 0x7f070095
-			public const int nav_settings = 2131165333;
+			public const int nav_home = 2131165333;
+			
+			// aapt resource value: 0x7f070094
+			public const int nav_items = 2131165332;
+			
+			// aapt resource value: 0x7f070096
+			public const int nav_refbooks = 2131165334;
+			
+			// aapt resource value: 0x7f070099
+			public const int nav_settings = 2131165337;
 			
 			// aapt resource value: 0x7f07007b
 			public const int navigation_frame = 2131165307;
@@ -2247,8 +2316,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070033
 			public const int start = 2131165235;
 			
-			// aapt resource value: 0x7f070080
-			public const int status_bar_latest_event_content = 2131165312;
+			// aapt resource value: 0x7f070084
+			public const int status_bar_latest_event_content = 2131165316;
 			
 			// aapt resource value: 0x7f070067
 			public const int submit_area = 2131165287;
@@ -2256,17 +2325,26 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07000f
 			public const int tabMode = 2131165199;
 			
-			// aapt resource value: 0x7f070088
-			public const int text = 2131165320;
+			// aapt resource value: 0x7f07008c
+			public const int text = 2131165324;
 			
-			// aapt resource value: 0x7f070086
-			public const int text2 = 2131165318;
+			// aapt resource value: 0x7f07008a
+			public const int text2 = 2131165322;
 			
 			// aapt resource value: 0x7f07004f
 			public const int textSpacerNoButtons = 2131165263;
 			
-			// aapt resource value: 0x7f070084
-			public const int time = 2131165316;
+			// aapt resource value: 0x7f07007f
+			public const int text_container = 2131165311;
+			
+			// aapt resource value: 0x7f070080
+			public const int text_view_fullname = 2131165312;
+			
+			// aapt resource value: 0x7f070081
+			public const int text_view_slogan = 2131165313;
+			
+			// aapt resource value: 0x7f070088
+			public const int time = 2131165320;
 			
 			// aapt resource value: 0x7f070045
 			public const int title = 2131165253;
@@ -2274,8 +2352,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07004a
 			public const int title_template = 2131165258;
 			
-			// aapt resource value: 0x7f07008c
-			public const int toolbar = 2131165324;
+			// aapt resource value: 0x7f070090
+			public const int toolbar = 2131165328;
 			
 			// aapt resource value: 0x7f070034
 			public const int top = 2131165236;
@@ -2469,49 +2547,52 @@ namespace MyFitnesser.Droid
 			public const int Menu = 2130968617;
 			
 			// aapt resource value: 0x7f04002a
-			public const int notification_media_action = 2130968618;
+			public const int Menu_Header = 2130968618;
 			
 			// aapt resource value: 0x7f04002b
-			public const int notification_media_cancel_action = 2130968619;
+			public const int notification_media_action = 2130968619;
 			
 			// aapt resource value: 0x7f04002c
-			public const int notification_template_big_media = 2130968620;
+			public const int notification_media_cancel_action = 2130968620;
 			
 			// aapt resource value: 0x7f04002d
-			public const int notification_template_big_media_narrow = 2130968621;
+			public const int notification_template_big_media = 2130968621;
 			
 			// aapt resource value: 0x7f04002e
-			public const int notification_template_lines = 2130968622;
+			public const int notification_template_big_media_narrow = 2130968622;
 			
 			// aapt resource value: 0x7f04002f
-			public const int notification_template_media = 2130968623;
+			public const int notification_template_lines = 2130968623;
 			
 			// aapt resource value: 0x7f040030
-			public const int notification_template_part_chronometer = 2130968624;
+			public const int notification_template_media = 2130968624;
 			
 			// aapt resource value: 0x7f040031
-			public const int notification_template_part_time = 2130968625;
+			public const int notification_template_part_chronometer = 2130968625;
 			
 			// aapt resource value: 0x7f040032
-			public const int select_dialog_item_material = 2130968626;
+			public const int notification_template_part_time = 2130968626;
 			
 			// aapt resource value: 0x7f040033
-			public const int select_dialog_multichoice_material = 2130968627;
+			public const int select_dialog_item_material = 2130968627;
 			
 			// aapt resource value: 0x7f040034
-			public const int select_dialog_singlechoice_material = 2130968628;
+			public const int select_dialog_multichoice_material = 2130968628;
 			
 			// aapt resource value: 0x7f040035
-			public const int Splash = 2130968629;
+			public const int select_dialog_singlechoice_material = 2130968629;
 			
 			// aapt resource value: 0x7f040036
-			public const int support_simple_spinner_dropdown_item = 2130968630;
+			public const int Splash = 2130968630;
 			
 			// aapt resource value: 0x7f040037
-			public const int Toolbar_Actionbar = 2130968631;
+			public const int support_simple_spinner_dropdown_item = 2130968631;
 			
 			// aapt resource value: 0x7f040038
-			public const int Train = 2130968632;
+			public const int Toolbar_Actionbar = 2130968632;
+			
+			// aapt resource value: 0x7f040039
+			public const int Train = 2130968633;
 			
 			static Layout()
 			{
