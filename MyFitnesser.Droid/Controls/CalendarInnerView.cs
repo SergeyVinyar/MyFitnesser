@@ -182,9 +182,5 @@
     bool GestureDetector.IOnGestureListener.OnSingleTapUp(MotionEvent e) {
       return false;
     }
-
   }
-
-
 }
-

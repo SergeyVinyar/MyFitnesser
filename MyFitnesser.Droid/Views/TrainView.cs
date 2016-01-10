@@ -23,7 +23,6 @@
 
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
-
       if (this.ViewModel == null)
         this.ViewModel = new TrainViewModel();
     }

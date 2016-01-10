@@ -8,7 +8,6 @@
     public void InitViews() {
       ShowViewModel<MenuViewModel>();
       ShowViewModel<CalendarDaysViewModel>();
-      //////////ShowViewModel<TrainViewModel>();
     }
 
   }

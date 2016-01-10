@@ -19,10 +19,11 @@
 
   using Core.ViewModels;
 
+
   [Activity]
   internal class MainActivityView : MvxAppCompatActivity, IFragmentHost {
 
-    protected override void OnCreate(Bundle bundle)	{
+    protected override void OnCreate(Bundle bundle) {
       base.OnCreate(bundle);
       SetContentView(Droid.Resource.Layout.Main);
       DrawerLayout = FindViewById<DrawerLayout>(Droid.Resource.Id.drawer_layout);
@@ -31,7 +32,6 @@
     protected override void OnStart() {
       base.OnStart();
       Core.Database.DbInit.Start();
-
       (DataContext as MainActivityViewModel).InitViews();
     }
 
@@ -50,21 +50,11 @@
       return base.OnOptionsItemSelected(item);
     }
 
-    private void ShowBackButton()
-    {
-      //TODO Tell the toggle to set the indicator off
-      //this.DrawerToggle.DrawerIndicatorEnabled = false;
-
-      //Block the menu slide gesture
+    private void ShowBackButton() {
       DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
     }
 
-    private void ShowHamburguerMenu()
-    {
-      //TODO set toggle indicator as enabled 
-      //this.DrawerToggle.DrawerIndicatorEnabled = true;
-
-      //Unlock the menu sliding gesture
+    private void ShowHamburguerMenu() {
       DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
     }
 
@@ -149,6 +139,5 @@
     }
 
     public DrawerLayout DrawerLayout;
-
   }
 }

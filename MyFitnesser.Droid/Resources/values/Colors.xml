@@ -1,10 +1,65 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- General colors -->
+    <!-- General colors BlueGray -->
+    <!--
+    <color name="colorPrimary">#607D8B</color>
+    <color name="colorPrimaryDark">#455A64</color>
+    -->
+
+    <!-- General colors Amber -->
+    <!--
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#FFA000</color>
+    -->
+
+    <!-- General colors Green -->
+    <!--
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    -->
+
+    <!-- General colors Teal -->
+    <color name="colorPrimary">#009688</color>
+    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorAccent">#64FFDA</color>
+
+    <!-- General colors Red -->
+    <!--
+    <color name="colorPrimary">#F44336</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
+    -->
+
+
+
+    <!-- General colors Purple -->
+    <!--
+    <color name="colorPrimary">#9C27B0</color>
+    <color name="colorPrimaryDark">#7B1FA2</color>
+    -->
+
+    <!-- General colors Indigo -->
+    <!--
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    -->
+
+    <!-- General colors Deep Purple -->
+    <!--
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#512DA8</color>
+    -->
+
+    <!-- General colors Blue -->
+    <!--
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#0288D1</color>
+    -->
+
+    <!-- General colors Orange 200 -->
+    <!--
     <color name="colorAccent">#FFCC80</color>
+    -->
 
     <!-- White to Black -->
     <color name="white">#FFFFFF</color>

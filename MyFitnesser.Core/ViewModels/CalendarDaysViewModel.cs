@@ -32,8 +32,7 @@
 
     public SuspendableObservableCollection<CalendarDayViewModel> Days {
       get { return _Days; }
-      set
-      {
+      set {
         _Days = value;
         RaisePropertyChanged(() => Days);
       }
@@ -59,12 +58,6 @@
       finally {
         Days.Resume();
       }
-    }
-
-    public void ShowYear() {
-      var parameters = new Dictionary<string, string>();
-      parameters.Add("CurrentDate", CurrentDate.ToShortDateString());
-      ShowViewModel<CalendarYearsViewModel>(parameters);
     }
 
     /// <summary>Текущая дата на календаре</summary>

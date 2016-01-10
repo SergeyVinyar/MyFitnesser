@@ -20,19 +20,11 @@
 
       _NavigationView = view.FindViewById<NavigationView>(Droid.Resource.Id.menu);
       _NavigationView.SetNavigationItemSelectedListener(this);
-      _NavigationView.Menu.FindItem(Resource.Id.nav_home).SetChecked(true);
-      
+
       return view;
     }
 
     public bool OnNavigationItemSelected(IMenuItem item) {
-      item.SetCheckable(true);
-      item.SetChecked(true);
-      if (_PreviousMenuItem != null) {
-          _PreviousMenuItem.SetChecked(false);
-      }
-      _PreviousMenuItem = item;
-
       Navigate(item.ItemId).ContinueWith(t => {});
       return true;
     }
@@ -44,13 +36,12 @@
       await Task.Delay(TimeSpan.FromMilliseconds (250));
       
       switch (itemId) {
-          case Resource.Id.nav_home:
+          case Resource.Id.nav_years:
 //                  ViewModel.ShowHomeCommand.Execute();
               break;
       }
     }
 
     private NavigationView _NavigationView;
-    private IMenuItem _PreviousMenuItem;
   }
 }

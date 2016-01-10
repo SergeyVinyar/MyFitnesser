@@ -14,6 +14,13 @@
       return _Db;
     }
 
+    public static void Close() {
+      if (_Db != null) {
+        _Db.Close();
+        _Db = null;
+      }
+    }
+
     private static SQLiteConnection _Db;
   }
 }

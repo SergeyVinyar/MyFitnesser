@@ -34,7 +34,7 @@
     }
 
     public static void Stop() {
-      DbConnection.Get().Close();
+      DbConnection.Close();
     }
 
     private const int _RequiredDbVersion = 1;

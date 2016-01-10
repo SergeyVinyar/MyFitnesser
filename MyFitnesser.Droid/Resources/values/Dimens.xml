@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <!-- Standard dimensions -->
@@ -9,8 +10,6 @@
     <dimen name="margin_huge">64dp</dimen>
 
     <!-- Semantic definitions -->
-
-    <dimen name="button_login_height">60dp</dimen>
 
     <dimen name="element_margin_smallest">1dp</dimen>
     <dimen name="element_margin_tinier">3dp</dimen>

@@ -1,6 +1,7 @@
 ﻿namespace MyFitnesser.Droid {
   using System;
   using System.Collections.Generic;
+
   using Cirrious.MvvmCross.Droid.Views;
   using Cirrious.MvvmCross.ViewModels;
 

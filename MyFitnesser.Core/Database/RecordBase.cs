@@ -4,6 +4,7 @@
   using System.Linq;
   using SQLite;
 
+
   public class RecordBase<T> where T: new() {
     
     [PrimaryKey, Unique]

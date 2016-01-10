@@ -13,7 +13,8 @@
         android:layout_centerVertical="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="@dimen/element_margin_medium"
-        android:scaleType="fitStart" />
+        android:scaleType="fitStart" 
+    />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -28,7 +29,8 @@
             android:textSize="@dimen/text_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="MyFitnesser" />
+            android:text="MyFitnesser" 
+        />
         <TextView
             android:id="@+id/text_view_slogan"
             android:singleLine="true"
@@ -36,6 +38,7 @@
             android:textSize="@dimen/text_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Быстрее! Выше! Сильнее!" />
+            android:text="Быстрее! Выше! Сильнее!" 
+        />
     </LinearLayout>
 </RelativeLayout>

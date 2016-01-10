@@ -1495,9 +1495,6 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f060005
 			public const int abc_text_size_title_material_toolbar = 2131099653;
 			
-			// aapt resource value: 0x7f06006d
-			public const int button_login_height = 2131099757;
-			
 			// aapt resource value: 0x7f060054
 			public const int design_appbar_elevation = 2131099732;
 			
@@ -1588,26 +1585,26 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f060045
 			public const int disabled_alpha_material_light = 2131099717;
 			
-			// aapt resource value: 0x7f060074
-			public const int element_margin_huge = 2131099764;
-			
 			// aapt resource value: 0x7f060073
-			public const int element_margin_large = 2131099763;
+			public const int element_margin_huge = 2131099763;
 			
 			// aapt resource value: 0x7f060072
-			public const int element_margin_medium = 2131099762;
+			public const int element_margin_large = 2131099762;
 			
 			// aapt resource value: 0x7f060071
-			public const int element_margin_small = 2131099761;
-			
-			// aapt resource value: 0x7f06006e
-			public const int element_margin_smallest = 2131099758;
-			
-			// aapt resource value: 0x7f06006f
-			public const int element_margin_tinier = 2131099759;
+			public const int element_margin_medium = 2131099761;
 			
 			// aapt resource value: 0x7f060070
-			public const int element_margin_tiny = 2131099760;
+			public const int element_margin_small = 2131099760;
+			
+			// aapt resource value: 0x7f06006d
+			public const int element_margin_smallest = 2131099757;
+			
+			// aapt resource value: 0x7f06006e
+			public const int element_margin_tinier = 2131099758;
+			
+			// aapt resource value: 0x7f06006f
+			public const int element_margin_tiny = 2131099759;
 			
 			// aapt resource value: 0x7f060046
 			public const int highlight_alpha_material_colored = 2131099718;
@@ -1636,8 +1633,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f060068
 			public const int margin_tiny = 2131099752;
 			
-			// aapt resource value: 0x7f060075
-			public const int navigation_drawer_width = 2131099765;
+			// aapt resource value: 0x7f060074
+			public const int navigation_drawer_width = 2131099764;
 			
 			// aapt resource value: 0x7f060049
 			public const int notification_large_icon_height = 2131099721;
@@ -1648,26 +1645,26 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f06004b
 			public const int notification_subtext_size = 2131099723;
 			
-			// aapt resource value: 0x7f06007b
-			public const int text_huge = 2131099771;
-			
 			// aapt resource value: 0x7f06007a
-			public const int text_large = 2131099770;
+			public const int text_huge = 2131099770;
 			
 			// aapt resource value: 0x7f060079
-			public const int text_medium = 2131099769;
+			public const int text_large = 2131099769;
 			
 			// aapt resource value: 0x7f060078
-			public const int text_small = 2131099768;
-			
-			// aapt resource value: 0x7f060076
-			public const int text_tinier = 2131099766;
+			public const int text_medium = 2131099768;
 			
 			// aapt resource value: 0x7f060077
-			public const int text_tiny = 2131099767;
+			public const int text_small = 2131099767;
 			
-			// aapt resource value: 0x7f06007c
-			public const int text_very_huge = 2131099772;
+			// aapt resource value: 0x7f060075
+			public const int text_tinier = 2131099765;
+			
+			// aapt resource value: 0x7f060076
+			public const int text_tiny = 2131099766;
+			
+			// aapt resource value: 0x7f06007b
+			public const int text_very_huge = 2131099771;
 			
 			static Dimension()
 			{
@@ -2163,26 +2160,29 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070017
 			public const int multiply = 2131165207;
 			
-			// aapt resource value: 0x7f070097
-			public const int nav_clients = 2131165335;
-			
 			// aapt resource value: 0x7f070098
-			public const int nav_footer = 2131165336;
-			
-			// aapt resource value: 0x7f07009a
-			public const int nav_helpfeedback = 2131165338;
+			public const int nav_clients = 2131165336;
 			
 			// aapt resource value: 0x7f070095
-			public const int nav_home = 2131165333;
+			public const int nav_days = 2131165333;
+			
+			// aapt resource value: 0x7f070099
+			public const int nav_footer = 2131165337;
+			
+			// aapt resource value: 0x7f07009b
+			public const int nav_helpfeedback = 2131165339;
 			
 			// aapt resource value: 0x7f070094
 			public const int nav_items = 2131165332;
 			
-			// aapt resource value: 0x7f070096
-			public const int nav_refbooks = 2131165334;
+			// aapt resource value: 0x7f070097
+			public const int nav_refbooks = 2131165335;
 			
-			// aapt resource value: 0x7f070099
-			public const int nav_settings = 2131165337;
+			// aapt resource value: 0x7f07009a
+			public const int nav_settings = 2131165338;
+			
+			// aapt resource value: 0x7f070096
+			public const int nav_years = 2131165334;
 			
 			// aapt resource value: 0x7f07007b
 			public const int navigation_frame = 2131165307;
@@ -2750,6 +2750,9 @@ namespace MyFitnesser.Droid
 			
 			// aapt resource value: 0x7f0a0142
 			public const int AppTheme_Menu = 2131362114;
+			
+			// aapt resource value: 0x7f0a0143
+			public const int AppTheme_Splash = 2131362115;
 			
 			// aapt resource value: 0x7f0a007b
 			public const int Base_AlertDialog_AppCompat = 2131361915;

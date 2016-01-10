@@ -23,7 +23,6 @@
 
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
-
       if (this.ViewModel == null)
         this.ViewModel = new ClientViewModel();
     }
@@ -35,13 +34,10 @@
 
     public override void OnStart() {
       base.OnStart();
-    
-
     }
 
     public override void OnStop() {
       base.OnStop();
-    
     }
 
   }

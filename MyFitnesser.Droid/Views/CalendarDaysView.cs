@@ -27,16 +27,11 @@
 
   using Core.ViewModels;
 
+
   public class CalendarDaysView : MvxFragment {
   
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
-
-//      this.Activity.ActionBar.SetDisplayShowTitleEnabled(false);
-//      this.Activity.ActionBar.NavigationMode = ActionBarNavigationMode.List;
-//      this.Activity.ActionBar.SetListNavigationCallbacks(new ArrayAdapter<string>(this.Activity, Android.Resource.Layout.SimpleListItem1, new[] { "День", "Год" } ), this);
-//      this.Activity.ActionBar.SetSelectedNavigationItem(0); // День
-
       if (this.ViewModel == null)
         this.ViewModel = new CalendarDaysViewModel();
     }
@@ -50,6 +45,7 @@
       if (_Toolbar != null) {
         ((MainActivityView)Activity).SetSupportActionBar(_Toolbar);
         ((MainActivityView)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+        _Toolbar.Title = "План на день";
 
         _DrawerToggle = new MvxActionBarDrawerToggle(
           Activity,                              
@@ -76,31 +72,19 @@
       _DrawerToggle.DrawerIndicatorEnabled = true;
     }
 
-    public override void OnConfigurationChanged(Configuration newConfig)
-    {
+    public override void OnConfigurationChanged(Configuration newConfig) {
       base.OnConfigurationChanged(newConfig);
-      if (_Toolbar != null)
-      {
+      if (_Toolbar != null) {
         _DrawerToggle.OnConfigurationChanged(newConfig);
       }
     }
 
-    public override void OnActivityCreated(Bundle savedInstanceState)
-    {
+    public override void OnActivityCreated(Bundle savedInstanceState) {
       base.OnActivityCreated(savedInstanceState);
-      if (_Toolbar != null)
-      {
+      if (_Toolbar != null) {
         _DrawerToggle.SyncState();
       }
     }
-
-//    bool ActionBar.IOnNavigationListener.OnNavigationItemSelected(int itemPosition, long itemId) {
-//      if (itemId == 1) {
-//        (ViewModel as CalendarDaysViewModel).ShowYear();
-//        return true;
-//      }
-//      return false;
-//    }
 
     private Toolbar _Toolbar;
     private MvxActionBarDrawerToggle _DrawerToggle;

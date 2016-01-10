@@ -1,6 +1,4 @@
-﻿using Cirrious.MvvmCross.Binding.Droid.BindingContext;
-
-namespace MyFitnesser.Droid.Views {
+﻿namespace MyFitnesser.Droid.Views {
   using System;
   using System.Collections.Generic;
   using System.Linq;
@@ -20,20 +18,15 @@ namespace MyFitnesser.Droid.Views {
   using Android.Graphics;
 
   using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
+  using Cirrious.MvvmCross.Binding.Droid.BindingContext;
 
   using Core.ViewModels;
 
 
-  public class CalendarYearsView : MvxFragment, ActionBar.IOnNavigationListener {
+  public class CalendarYearsView : MvxFragment {
   
     public override void OnCreate(Bundle savedInstanceState) {
       base.OnCreate(savedInstanceState);
-
-      this.Activity.ActionBar.SetDisplayShowTitleEnabled(false);
-      this.Activity.ActionBar.NavigationMode = ActionBarNavigationMode.List;
-      this.Activity.ActionBar.SetListNavigationCallbacks(new ArrayAdapter<string>(this.Activity, Android.Resource.Layout.SimpleListItem1, new[] { "День", "Год" } ), this);
-      this.Activity.ActionBar.SetSelectedNavigationItem(1); // Год
-
       if (this.ViewModel == null)
         this.ViewModel = new CalendarYearsViewModel();
     }
@@ -45,14 +38,6 @@ namespace MyFitnesser.Droid.Views {
 
     public override void OnResume() {
       base.OnResume();
-    }
-
-    bool ActionBar.IOnNavigationListener.OnNavigationItemSelected(int itemPosition, long itemId) {
-      if (itemId == 0) {
-        (ViewModel as CalendarYearsViewModel).ShowDay();
-        return true;
-      }
-      return false;
     }
 
   }

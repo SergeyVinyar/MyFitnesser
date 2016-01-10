@@ -3,10 +3,10 @@
   using System.Collections.ObjectModel;
   using System.Collections.Specialized;
 
+
   public class SuspendableObservableCollection<T> : ObservableCollection<T> {
 
-    protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
-    {
+    protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e) {
       if (!_Suspended)
         base.OnCollectionChanged(e);
     }

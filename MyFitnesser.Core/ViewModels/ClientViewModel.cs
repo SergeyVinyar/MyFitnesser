@@ -64,7 +64,6 @@
     }
 
     public IMvxCommand CloseCommand { get { return new MvxCommand(() => Close(this), () => true); } }
-
   }
 }
 

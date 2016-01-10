@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-<!-- Content -->
+    <!-- Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -17,28 +17,32 @@
                 android:hint="Клиент"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content" 
+            />
             <EditText
                 android:hint="День начала"
                 android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                local:MvxBind="Text StartDate" />
+                local:MvxBind="Text StartDate" 
+            />
             <EditText
                 android:hint="День окончания"
                 android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                local:MvxBind="Text EndDate" />
+                local:MvxBind="Text EndDate" 
+            />
             <EditText
                 android:hint="Примечание"
                 android:inputType="textMultiLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                local:MvxBind="Text Notes" />
+                local:MvxBind="Text Notes" 
+            />
         </LinearLayout>
     </ScrollView>
-<!-- Buttons at the bottom -->
+    <!-- Buttons at the bottom -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -52,7 +56,8 @@
             android:layout_marginBottom="4dip"
             android:layout_marginTop="4dip"
             android:background="?android:attr/dividerVertical"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true" 
+        />
         <Button
             android:id="@+id/TrainCancelButton"
             android:layout_width="wrap_content"
@@ -63,7 +68,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:text="@android:string/cancel"
             android:layout_alignParentBottom="true"
-            local:MvxBind="Click CloseCommand" />
+            local:MvxBind="Click CloseCommand" 
+        />
         <Button
             android:id="@+id/TrainWriteButton"
             android:layout_width="wrap_content"
@@ -74,6 +80,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:text="@android:string/ok"
             android:layout_alignParentBottom="true"
-            local:MvxBind="Click WriteAndCloseCommand" />
+            local:MvxBind="Click WriteAndCloseCommand" 
+        />
     </RelativeLayout>
 </RelativeLayout>

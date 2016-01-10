@@ -14,15 +14,18 @@
             android:layout_width="290dp"
             android:layout_height="match_parent"
             android:foregroundGravity="left"
-            android:layout_marginRight="12.3dp" />
+            android:layout_marginRight="12.3dp" 
+        />
         <FrameLayout
             android:id="@+id/panel_right"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent" 
+        />
     </android.support.design.widget.CoordinatorLayout>
     <FrameLayout
         android:id="@+id/navigation_frame"
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
-        android:layout_gravity="left|start" />
+        android:layout_gravity="left|start" 
+    />
 </android.support.v4.widget.DrawerLayout>

@@ -1,7 +1,9 @@
 namespace MyFitnesser.Droid {
   using System.Collections.Generic;
   using System.Reflection;
+
   using Android.Content;
+
   using Cirrious.CrossCore;
   using Cirrious.CrossCore.Platform;
   using Cirrious.MvvmCross.Droid.Platform;
@@ -32,20 +34,12 @@ namespace MyFitnesser.Droid {
       return customPresenter;
     }
 
-    protected override IEnumerable<Assembly> AndroidViewAssemblies
-    {
-      get 
-      {
+    protected override IEnumerable<Assembly> AndroidViewAssemblies {
+      get {
         var assemblies = new List<Assembly>(base.AndroidViewAssemblies);
         assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
         return assemblies;
       }
     }
-
-
-//    protected override IMvxTrace CreateDebugTrace() {
-//      return new DebugTrace();
-//    }
-
   }
 }

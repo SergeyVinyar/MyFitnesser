@@ -1,8 +1,7 @@
-using Cirrious.MvvmCross.ViewModels;
-
 namespace MyFitnesser.Core {
   using Cirrious.CrossCore;
   using Cirrious.CrossCore.IoC;
+  using Cirrious.MvvmCross.ViewModels;
 
 
   public class App : Cirrious.MvvmCross.ViewModels.MvxApplication {

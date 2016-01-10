@@ -1,15 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<menu 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto">
 
     <group android:id="@+id/nav_items">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_days"
             android:title="План на день" 
         />
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_years"
             android:title="Календарь" 
         />
     </group>

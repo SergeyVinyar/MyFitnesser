@@ -12,5 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         local:MvxItemTemplate="@layout/calendarday"
-        local:MvxBind="ItemsSource Days; ItemPageSelected ItemPageChangedCommand" />
+        local:MvxBind="ItemsSource Days; ItemPageSelected ItemPageChangedCommand" 
+    />
 </LinearLayout>
