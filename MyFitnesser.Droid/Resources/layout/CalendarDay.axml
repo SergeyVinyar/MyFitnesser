@@ -7,6 +7,5 @@
         android:id="@+id/CalendarInnerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        local:MvxBind="Date Date; Trains Trains" 
-    />
+        local:MvxBind="Date Date; Trains Trains" />
 </ScrollView>

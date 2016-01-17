@@ -7,11 +7,11 @@
   using Android;
   using Android.App;
   using Android.Content;
-  using Android.Content.Res;
   using Android.OS;
   using Android.Runtime;
   using Android.Util;
   using Android.Views;
+  using Android.Support.V4.Widget;
   using Android.Support.V7.Widget;
 
   using Android.Graphics.Drawables;
@@ -38,27 +38,8 @@
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       base.OnCreateView(inflater, container, savedInstanceState);
-      var view = this.BindingInflate(MyFitnesser.Droid.Resource.Layout.CalendarDays, null);
-
-      _Toolbar = view.FindViewById<Toolbar>(Droid.Resource.Id.toolbar);
-
-      if (_Toolbar != null) {
-        ((MainActivityView)Activity).SetSupportActionBar(_Toolbar);
-        ((MainActivityView)Activity).SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-        _Toolbar.Title = "План на день";
-
-        _DrawerToggle = new MvxActionBarDrawerToggle(
-          Activity,                              
-          ((MainActivityView)Activity).DrawerLayout,
-          _Toolbar,                               
-          Droid.Resource.String.drawer_open,            
-          Droid.Resource.String.drawer_close            
-        );
-
-        ((MainActivityView)Activity).DrawerLayout.SetDrawerListener(_DrawerToggle);
-      }
-
-      return view;
+      ((MainActivityView)Activity).Toolbar.Title = "План на день";
+      return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.CalendarDays, null);
     }
 
     public override void OnStart() {
@@ -69,25 +50,10 @@
 
     public override void OnResume() {
       base.OnResume();
-      _DrawerToggle.DrawerIndicatorEnabled = true;
+      var mainActivity = (MainActivityView)Activity;
+      mainActivity.DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
+      mainActivity.DrawerToggle.DrawerIndicatorEnabled = true;
     }
-
-    public override void OnConfigurationChanged(Configuration newConfig) {
-      base.OnConfigurationChanged(newConfig);
-      if (_Toolbar != null) {
-        _DrawerToggle.OnConfigurationChanged(newConfig);
-      }
-    }
-
-    public override void OnActivityCreated(Bundle savedInstanceState) {
-      base.OnActivityCreated(savedInstanceState);
-      if (_Toolbar != null) {
-        _DrawerToggle.SyncState();
-      }
-    }
-
-    private Toolbar _Toolbar;
-    private MvxActionBarDrawerToggle _DrawerToggle;
   }
 }
 

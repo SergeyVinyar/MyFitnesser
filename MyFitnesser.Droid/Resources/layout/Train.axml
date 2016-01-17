@@ -1,86 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px">
-    <!-- Content -->
-    <ScrollView
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:orientation="vertical"
+        android:layout_height="match_parent">
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
                 android:hint="Клиент"
                 android:inputType="textPersonName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" 
-            />
-            <EditText
-                android:hint="День начала"
-                android:inputType="date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text StartDate" 
-            />
-            <EditText
-                android:hint="День окончания"
-                android:inputType="date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text EndDate" 
-            />
-            <EditText
-                android:hint="Примечание"
-                android:inputType="textMultiLine"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text Notes" 
-            />
-        </LinearLayout>
-    </ScrollView>
-    <!-- Buttons at the bottom -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true">
-        <View
-            android:id="@+id/TrainButtonSeparator"
-            android:layout_width="1dip"
+                android:layout_height="wrap_content" />
+        </android.support.design.widget.TextInputLayout>
+        <EditText
+            android:hint="День начала"
+            android:inputType="date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="4dip"
-            android:layout_marginTop="4dip"
-            android:background="?android:attr/dividerVertical"
-            android:layout_centerHorizontal="true" 
-        />
-        <Button
-            android:id="@+id/TrainCancelButton"
-            android:layout_width="wrap_content"
+            local:MvxBind="Text StartDate" />
+        <EditText
+            android:hint="День окончания"
+            android:inputType="date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@id/TrainButtonSeparator"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@android:string/cancel"
-            android:layout_alignParentBottom="true"
-            local:MvxBind="Click CloseCommand" 
-        />
-        <Button
-            android:id="@+id/TrainWriteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/TrainButtonSeparator"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@android:string/ok"
-            android:layout_alignParentBottom="true"
-            local:MvxBind="Click WriteAndCloseCommand" 
-        />
-    </RelativeLayout>
-</RelativeLayout>
+            local:MvxBind="Text EndDate" />
+        <EditText
+            android:hint="Примечание"
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            local:MvxBind="Text Notes" />
+    </LinearLayout>
+</ScrollView>

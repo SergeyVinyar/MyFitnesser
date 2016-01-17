@@ -11,7 +11,8 @@
   using Android.Runtime;
   using Android.Util;
   using Android.Views;
-  using Android.Widget;
+  using Android.Support.V4.Widget;
+  using Android.Support.V7.Widget;
 
   using Android.Graphics.Drawables;
   using Android.Graphics.Drawables.Shapes;
@@ -19,6 +20,8 @@
 
   using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
   using Cirrious.MvvmCross.Binding.Droid.BindingContext;
+
+  using MvvmCross.Droid.Support.V7.AppCompat;
 
   using Core.ViewModels;
 
@@ -33,13 +36,16 @@
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       base.OnCreateView(inflater, container, savedInstanceState);
+      ((MainActivityView)Activity).Toolbar.Title = "Календарь";
       return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.CalendarYears, null);
     }
 
     public override void OnResume() {
       base.OnResume();
+      var mainActivity = (MainActivityView)Activity;
+      mainActivity.DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
+      mainActivity.DrawerToggle.DrawerIndicatorEnabled = true;
     }
 
   }
 }
-

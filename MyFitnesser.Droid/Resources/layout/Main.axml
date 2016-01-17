@@ -9,17 +9,24 @@
         android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <FrameLayout
-            android:id="@+id/panel_left"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true" 
-        />
+            android:layout_height="match_parent">
+            <include
+                layout="@layout/toolbar_actionbar" />
+        <!-- "@id/appbar" -->
+            <FrameLayout
+                android:id="@+id/panel_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appbar"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
     </android.support.design.widget.CoordinatorLayout>
     <FrameLayout
         android:id="@+id/navigation_frame"
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
-        android:layout_gravity="left|start" 
-    />
+        android:layout_gravity="left|start" />
 </android.support.v4.widget.DrawerLayout>

@@ -5,13 +5,24 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include
-        layout="@layout/toolbar_actionbar" />
-    <BindableViewPager
-        android:id="@+id/CalendarDaysPagerView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        local:MvxItemTemplate="@layout/calendarday"
-        local:MvxBind="ItemsSource Days; ItemPageSelected ItemPageChangedCommand" 
-    />
+        android:layout_height="match_parent">
+        <BindableViewPager
+            android:id="@+id/CalendarDaysPagerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            local:MvxItemTemplate="@layout/calendarday"
+            local:MvxBind="ItemsSource Days; ItemPageSelected ItemPageChangedCommand" />
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/CalendarDaysFAB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/element_margin_medium"
+            android:layout_marginBottom="@dimen/element_margin_medium"
+            android:src="@drawable/ic_action_new"
+            local:MvxBind="Click AddNewTrainCommand" />
+    </RelativeLayout>
 </LinearLayout>

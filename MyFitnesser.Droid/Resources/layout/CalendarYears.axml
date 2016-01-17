@@ -12,6 +12,5 @@
         android:id="@+id/calendarView1"
         android:showWeekNumber="false"
         android:layoutMode="opticalBounds"
-        android:padding="8dp" 
-    />
+        android:padding="8dp" />
 </LinearLayout>

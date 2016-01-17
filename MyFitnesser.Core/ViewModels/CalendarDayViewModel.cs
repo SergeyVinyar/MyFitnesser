@@ -10,7 +10,7 @@
   using MyFitnesser.Core.Utils;
 
 
-  public class CalendarDayViewModel : MvxNotifyPropertyChanged {
+  public class CalendarDayViewModel : MvxNavigatingObject {
 
     public CalendarDayViewModel() {
       Date = DateTime.Now.Date;      
@@ -56,8 +56,28 @@
         Trains.Add(new Train() { StartDate = train.StartDate, EndDate = train.EndDate, ClientName = clients[train.ClientId].Name });
     }
 
+    public IMvxCommand EditTrainCommand {
+      get { return new MvxCommand<Guid>(trainId => EditTrain(trainId)); }
+    }
+
+    private void EditTrain(Guid trainId) {
+      var parameters = new TrainViewModel.ViewParameters();
+      parameters.TrainId = trainId;
+      ShowViewModel<TrainViewModel>(parameters);
+    }
+
+    public IMvxCommand DeleteTrainCommand {
+      get { return new MvxCommand<Guid>(trainId => DeleteTrain(trainId)); }
+    }
+
+    private void DeleteTrain(Guid trainId) {
+      // TODO
+    }
+
     /// <summary>Тренировка-событие в календаре</summary>
     public class Train {
+
+      public Guid Id;
 
       public DateTime StartDate;
 

@@ -11,15 +11,21 @@
       _Record = new Database.TrainRecord();
     }
 
-    public TrainViewModel(Guid id) : base() {
-      _Record = Database.TrainRecord.Records().Where(_ => _.Id == id).FirstOrDefault();
-      this.ClientId  = _Record.ClientId;
-      this.StartDate = _Record.StartDate;
-      this.EndDate   = _Record.EndDate;
-      this.Status    = _Record.Status;
-      this.Notes     = _Record.Notes;
+    public void Init(ViewParameters parameters) {
+      if (parameters.TrainId == Guid.Empty) {
+        _Record = new Database.TrainRecord();
+        StartDate = parameters.Date.Date.AddHours(13);
+        EndDate   = parameters.Date.Date.AddHours(14);
+      }
+      else {
+        _Record = Database.TrainRecord.Records().Where(_ => _.Id == parameters.TrainId).FirstOrDefault();
+        this.ClientId  = _Record.ClientId;
+        this.StartDate = _Record.StartDate;
+        this.EndDate   = _Record.EndDate;
+        this.Status    = _Record.Status;
+        this.Notes     = _Record.Notes;
+      }
     }
-    private Database.TrainRecord _Record;
 
     public Guid ClientId { 
       get { return _ClientId; }
@@ -64,6 +70,13 @@
     }
 
     public IMvxCommand CloseCommand { get { return new MvxCommand(() => Close(this), () => true); } }
+
+    private Database.TrainRecord _Record;
+
+    public class ViewParameters {
+      public DateTime Date { get; set; }
+      public Guid TrainId { get; set; }
+    }
   }
 }
 

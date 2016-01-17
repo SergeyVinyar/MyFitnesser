@@ -4,13 +4,22 @@
 
   public class MenuViewModel : MvxViewModel {
 
-//        public IMvxCommand ShowHomeCommand {
-//            get { return new MvxCommand(ShowHomeExecuted); }
-//        }
-//
-//        private void ShowHomeExecuted() {
-//            ShowViewModel<HomeViewModel>();
-//        }
+    public IMvxCommand ShowCalendarDaysCommand {
+      get { return new MvxCommand(ShowCalendarDays); }
+    }
+
+    private void ShowCalendarDays() {
+      ShowViewModel<CalendarDaysViewModel>();
+    }
+
+    public IMvxCommand ShowCalendarYearsCommand {
+      get { return new MvxCommand(ShowCalendarYears); }
+    }
+
+    private void ShowCalendarYears() {
+      ShowViewModel<CalendarYearsViewModel>();
+    }
+
 
   }
 }

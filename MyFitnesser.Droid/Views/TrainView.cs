@@ -11,7 +11,8 @@
   using Android.Runtime;
   using Android.Util;
   using Android.Views;
-  using Android.Widget;
+  using Android.Support.V4.Widget;
+  using Android.Support.V7.Widget;
 
   using Cirrious.MvvmCross.Binding.Droid.BindingContext;
   using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
@@ -29,17 +30,16 @@
 
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       base.OnCreateView(inflater, container, savedInstanceState);
+      ((MainActivityView)Activity).Toolbar.Title = "Тренировка";
       return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.Train, null);
     }
 
-    public override void OnStart() {
-      base.OnStart();
+    public override void OnResume() {
+      base.OnResume();
+      var mainActivity = (MainActivityView)Activity;
+      mainActivity.DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
+      mainActivity.DrawerToggle.DrawerIndicatorEnabled = false;
     }
-
-    public override void OnStop() {
-      base.OnStop();
-    }
-
   }
 }
 

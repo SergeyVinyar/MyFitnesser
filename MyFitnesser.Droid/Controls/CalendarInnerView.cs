@@ -17,21 +17,15 @@
   using Core.ViewModels;
 
 
-  public class CalendarInnerView: View, GestureDetector.IOnGestureListener {
+  public class CalendarInnerView: View {
 
     public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs, int defStyle): base(context, attrs, defStyle) {
-      _GestureDetector = new GestureDetector(this);
-      _GestureDetector.IsLongpressEnabled = true;
     }
 
     public CalendarInnerView(Context context, Android.Util.IAttributeSet attrs): base(context, attrs) { 
-      _GestureDetector = new GestureDetector(this);
-      _GestureDetector.IsLongpressEnabled = true;
     }
 
     public CalendarInnerView(Context context): base(context) { 
-      _GestureDetector = new GestureDetector(this);
-      _GestureDetector.IsLongpressEnabled = true;
     }
 
     public DateTime Date { 
@@ -55,6 +49,15 @@
       }
     }
     private ObservableCollection<CalendarDayViewModel.Train> _Trains;
+
+    /// <summary>Пользователь нажал "Редактировать тренировку". В свойстве SelectedTrainId находится Id тренировки.</summary>
+    public event EventHandler OnEditTrain;
+
+    /// <summary>Пользователь нажал "Удалить тренировку". В свойстве SelectedTrainId находится Id тренировки.</summary>
+    public event EventHandler OnDeleteTrain;
+
+    /// <summary>Id тренировки, выбранной пользователем</summary>
+    public Guid SelectedTrainId { get; set; }
 
     protected override void OnMeasure(int widthMeasureSpec, int heightMeasureSpec) {
       _Width = MeasureSpec.GetSize(widthMeasureSpec);
@@ -135,8 +138,7 @@
     }
 
     public override bool OnTouchEvent(MotionEvent e) {
-      if (_GestureDetector.OnTouchEvent(e))
-        return true;
+      // TODO
       return true;
     }
 
@@ -160,27 +162,5 @@
     private int _PageTitleHeight;
     private int _Width;
     private int _Height;
-
-    private GestureDetector _GestureDetector;
-
-    bool GestureDetector.IOnGestureListener.OnDown(MotionEvent e) {
-      return false;
-    }
-    bool GestureDetector.IOnGestureListener.OnFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-      return false;
-    }
-    void GestureDetector.IOnGestureListener.OnLongPress(MotionEvent e) {
-      var x = e.GetX();
-      var y = e.GetY();
-    }
-    bool GestureDetector.IOnGestureListener.OnScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-      return false;
-    }
-    void GestureDetector.IOnGestureListener.OnShowPress(MotionEvent e) {
-      
-    }
-    bool GestureDetector.IOnGestureListener.OnSingleTapUp(MotionEvent e) {
-      return false;
-    }
   }
 }

@@ -38,6 +38,7 @@ namespace MyFitnesser.Droid {
       get {
         var assemblies = new List<Assembly>(base.AndroidViewAssemblies);
         assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
+        //assemblies.Add(typeof(Android.Support.Design.Widget.FloatingActionButton).Assembly);
         return assemblies;
       }
     }

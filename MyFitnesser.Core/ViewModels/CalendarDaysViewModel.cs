@@ -72,6 +72,16 @@
     }
     private DateTime _CurrentDate;
 
+    public IMvxCommand AddNewTrainCommand {
+      get { return new MvxCommand(AddNewTrain); }
+    }
+
+    private void AddNewTrain() {
+      var parameters = new TrainViewModel.ViewParameters();
+      parameters.Date = CurrentDate;
+      ShowViewModel<TrainViewModel>(parameters);
+    }
+
     public readonly int ViewPagerCapacity = 400;
   }
 }
