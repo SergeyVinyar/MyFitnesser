@@ -77,13 +77,10 @@
     /// <summary>Тренировка-событие в календаре</summary>
     public class Train {
 
-      public Guid Id;
-
-      public DateTime StartDate;
-
-      public DateTime EndDate;
-
-      public string ClientName;
+      public Guid Id { get; set; }
+      public DateTime StartDate { get; set; }
+      public DateTime EndDate { get; set; }
+      public string ClientName { get; set; }
     }
   }
 }

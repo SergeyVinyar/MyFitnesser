@@ -27,8 +27,16 @@
       else {
         DbConnection.Get().Update(this);
       }
+      DataChanged();
     }
 
+    public static event EventHandler OnDataChanged;
+
+    private static void DataChanged() {
+      var d = OnDataChanged;
+      if (d != null)
+        d(null, EventArgs.Empty);
+    }
   }
 }
 

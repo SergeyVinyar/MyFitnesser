@@ -21,6 +21,20 @@
     }
     private Database.ClientRecord _Record;
 
+    public void Init(ViewParameters parameters) {
+      if (parameters.ClientId == Guid.Empty) {
+        _Record = new Database.ClientRecord();
+      }
+      else {
+        _Record = Database.ClientRecord.Records().Where(_ => _.Id == parameters.ClientId).FirstOrDefault();
+        this.Name     = _Record.Name;
+        this.Phone    = _Record.Phone;
+        this.EMail    = _Record.EMail;
+        this.Birthday = _Record.BirthDay;
+        this.Notes    = _Record.Notes;
+      }
+    }
+
     public string Name { 
       get { return _Name; }
       set { _Name = value; RaisePropertyChanged(() => Name); }
@@ -51,19 +65,26 @@
     }
     private string _Notes;
 
-    public IMvxCommand WriteAndCloseCommand { get { return new MvxCommand(() => WriteAndClose(), () => true); } }
+    public IMvxCommand WriteCommand { get { return new MvxCommand(() => Write(false), () => true); } }
 
-    private void WriteAndClose() {
+    public IMvxCommand WriteAndCloseCommand { get { return new MvxCommand(() => Write(true), () => true); } }
+
+    private void Write(bool thenClose) {
       _Record.Name     = this.Name;
       _Record.Phone    = this.Phone;
       _Record.EMail    = this.EMail;
       _Record.BirthDay = this.Birthday;
       _Record.Notes    = this.Notes;
       _Record.Write();
-      Close(this);
+      if (thenClose)
+        Close(this);
     }
 
     public IMvxCommand CloseCommand { get { return new MvxCommand(() => Close(this), () => true); } }
+
+    public class ViewParameters {
+      public Guid ClientId { get; set; }
+    }
   }
 }
 

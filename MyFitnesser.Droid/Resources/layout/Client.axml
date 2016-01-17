@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-    <!-- Content -->
+<!-- Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -13,82 +13,63 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <EditText
-                android:hint="ФИО клиента"
-                android:inputType="textPersonName"
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text Name" 
-            />
-            <EditText
-                android:hint="Телефон"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:hint="ФИО клиента"
+                    android:inputType="textPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    local:MvxBind="Text Name" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="phone"
-                local:MvxBind="Text Phone" 
-            />
-            <EditText
-                android:hint="EMail"
-                android:inputType="textEmailAddress"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:hint="Телефон"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    local:MvxBind="Text Phone" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text EMail" 
-            />
-            <EditText
+                android:layout_height="wrap_content">
+                <EditText
+                    android:hint="EMail"
+                    android:inputType="textEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    local:MvxBind="Text EMail" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:hint="День рождения"
+                    android:inputType="date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    local:MvxBind="Text Birthday" />
+            </android.support.design.widget.TextInputLayout>
+        <!--
+            <MvxDatePicker
                 android:hint="День рождения"
-                android:inputType="date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                local:MvxBind="Text Birthday" 
-            />
-            <EditText
-                android:hint="Примечание"
-                android:inputType="textMultiLine"
+                local:MvxBind="Value Birthday" />
+-->
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                local:MvxBind="Text Notes" 
-            />
+                android:layout_height="wrap_content">
+                <EditText
+                    android:hint="Примечание"
+                    android:inputType="textMultiLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    local:MvxBind="Text Notes" />
+            </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     </ScrollView>
-    <!-- Buttons at the bottom -->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_alignParentBottom="true">
-        <View
-            android:id="@+id/ClientButtonSeparator"
-            android:layout_width="1dip"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="4dip"
-            android:layout_marginTop="4dip"
-            android:background="?android:attr/dividerVertical"
-            android:layout_centerHorizontal="true" 
-        />
-        <Button
-            android:id="@+id/ClientCancelButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@id/ClientButtonSeparator"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@android:string/cancel"
-            android:layout_alignParentBottom="true"
-            local:MvxBind="Click CloseCommand" 
-        />
-        <Button
-            android:id="@+id/ClientWriteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/ClientButtonSeparator"
-            android:background="?android:attr/selectableItemBackground"
-            android:text="@android:string/ok"
-            android:layout_alignParentBottom="true"
-            local:MvxBind="Click WriteAndCloseCommand" 
-        />
-    </RelativeLayout>
 </RelativeLayout>

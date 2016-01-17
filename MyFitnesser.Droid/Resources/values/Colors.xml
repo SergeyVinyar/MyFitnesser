@@ -20,9 +20,11 @@
     -->
 
     <!-- General colors Teal -->
+<!--
     <color name="colorPrimary">#009688</color>
     <color name="colorPrimaryDark">#00796B</color>
     <color name="colorAccent">#64FFDA</color>
+-->
 
     <!-- General colors Red -->
     <!--
@@ -51,15 +53,9 @@
     -->
 
     <!-- General colors Blue -->
-    <!--
     <color name="colorPrimary">#03A9F4</color>
     <color name="colorPrimaryDark">#0288D1</color>
-    -->
-
-    <!-- General colors Orange 200 -->
-    <!--
-    <color name="colorAccent">#FFCC80</color>
-    -->
+    <color name="colorAccent">#F57C00</color>
 
     <!-- White to Black -->
     <color name="white">#FFFFFF</color>

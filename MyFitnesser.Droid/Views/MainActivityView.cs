@@ -94,7 +94,11 @@ namespace MyFitnesser.Droid.Views {
       }
     }
 
-    public bool Show(MvxViewModelRequest request) {
+    void IFragmentHost.GoBack() {
+      OnBackPressed();
+    }
+
+    bool IFragmentHost.Show(MvxViewModelRequest request) {
       var loaderService = Mvx.Resolve<IMvxViewModelLoader>();
       var viewModel = loaderService.LoadViewModel(request, null /* saved state */);
 
@@ -124,18 +128,6 @@ namespace MyFitnesser.Droid.Views {
         v.ViewModel = viewModel;
         return true;
       }
-      else if (viewModel is ClientViewModel) {
-        ClientView v;
-        var panelId = Droid.Resource.Id.panel_left;
-        //if (HasTwoPanels)
-        //  panelId = Droid.Resource.Id.panel_right;
-        FragmentManager.BeginTransaction()
-          .Replace(panelId, v = new ClientView())
-          .AddToBackStack(null)
-          .Commit();
-        v.ViewModel = viewModel;
-        return true;
-      }
       else if (viewModel is TrainViewModel) {
         TrainView v;
         var panelId = Droid.Resource.Id.panel_left;
@@ -148,8 +140,25 @@ namespace MyFitnesser.Droid.Views {
         v.ViewModel = viewModel;
         return true;
       }
-      else if (viewModel is ClientsListViewModel) {
-        // TODO
+      else if (viewModel is ClientsViewModel) {
+        ClientsView v;
+        var panelId = Droid.Resource.Id.panel_left;
+        FragmentManager.BeginTransaction()
+          .Replace(panelId, v = new ClientsView())
+          .Commit();
+        v.ViewModel = viewModel;
+        return true;
+      }
+      else if (viewModel is ClientViewModel) {
+        ClientView v;
+        var panelId = Droid.Resource.Id.panel_left;
+        //if (HasTwoPanels)
+        //  panelId = Droid.Resource.Id.panel_right;
+        FragmentManager.BeginTransaction()
+          .Replace(panelId, v = new ClientView())
+          .AddToBackStack(null)
+          .Commit();
+        v.ViewModel = viewModel;
         return true;
       }
       return false;

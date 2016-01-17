@@ -16,6 +16,16 @@
         base.Show(request);
     }
 
+    public override void ChangePresentation(MvxPresentationHint hint) {
+      // TODO Счас не проверяется, что закрывают именно тот фрагмент,
+      // который находится на вершине стека
+      var host = this.Activity as IFragmentHost;      
+      if (host != null && hint is MvxClosePresentationHint)
+        host.GoBack();
+      else
+        base.ChangePresentation(hint);
+    }
+
     public void RegisterFragment(Type viewModelType) {
       _ViewTypes.Add(viewModelType);
     }
@@ -31,5 +41,6 @@
   /// <summary>Имплементирует хост фрагментов</summary>
   public interface IFragmentHost {
     bool Show(MvxViewModelRequest request);
+    void GoBack();
   }
 }

@@ -48,6 +48,9 @@
         case Resource.Id.nav_years:
           model.ShowCalendarYearsCommand.Execute();
           break;
+        case Resource.Id.nav_clients:
+          model.ShowClientsCommand.Execute();
+          break;
       }
     }
 

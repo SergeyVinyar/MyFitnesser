@@ -27,9 +27,9 @@ namespace MyFitnesser.Droid {
       customPresenter.RegisterFragment(typeof(Core.ViewModels.MenuViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarDaysViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.CalendarYearsViewModel));
-      customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientViewModel));
       customPresenter.RegisterFragment(typeof(Core.ViewModels.TrainViewModel));
-      customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientsListViewModel));
+      customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientsViewModel));
+      customPresenter.RegisterFragment(typeof(Core.ViewModels.ClientViewModel));
 
       return customPresenter;
     }
@@ -38,7 +38,6 @@ namespace MyFitnesser.Droid {
       get {
         var assemblies = new List<Assembly>(base.AndroidViewAssemblies);
         assemblies.Add(typeof(Cheesebaron.MvvmCross.Bindings.Droid.BindableViewPager).Assembly);
-        //assemblies.Add(typeof(Android.Support.Design.Widget.FloatingActionButton).Assembly);
         return assemblies;
       }
     }

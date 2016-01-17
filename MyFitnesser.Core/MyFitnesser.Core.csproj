@@ -65,7 +65,6 @@
     <Compile Include="Database\ClientRecord.cs" />
     <Compile Include="Database\RecordBase.cs" />
     <Compile Include="Database\TrainRecord.cs" />
-    <Compile Include="ViewModels\ClientsListViewModel.cs" />
     <Compile Include="ViewModels\ClientViewModel.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\MainActivityViewModel.cs" />
@@ -76,6 +75,7 @@
     <Compile Include="Database\DbVersionRecord.cs" />
     <Compile Include="ViewModels\TrainViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\ClientsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MyFitnesser.Core.csproj" />

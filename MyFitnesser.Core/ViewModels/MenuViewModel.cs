@@ -20,6 +20,13 @@
       ShowViewModel<CalendarYearsViewModel>();
     }
 
+    public IMvxCommand ShowClientsCommand {
+      get { return new MvxCommand(ShowClients); }
+    }
+
+    private void ShowClients() {
+      ShowViewModel<ClientsViewModel>();
+    }
 
   }
 }

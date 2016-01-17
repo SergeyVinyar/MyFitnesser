@@ -110,6 +110,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Views\MenuView.cs" />
+    <Compile Include="Views\ClientsView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -146,6 +147,9 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_new.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_action_new.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_new.png" />
+    <AndroidResource Include="Resources\layout\Clients.axml" />
+    <AndroidResource Include="Resources\menu\SaveCancel.axml" />
+    <AndroidResource Include="Resources\layout\Clients_Item.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
