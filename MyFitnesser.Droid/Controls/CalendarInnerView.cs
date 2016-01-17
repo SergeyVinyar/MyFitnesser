@@ -50,12 +50,6 @@
     }
     private ObservableCollection<CalendarDayViewModel.Train> _Trains;
 
-    /// <summary>Пользователь нажал "Редактировать тренировку". В свойстве SelectedTrainId находится Id тренировки.</summary>
-    public event EventHandler OnEditTrain;
-
-    /// <summary>Пользователь нажал "Удалить тренировку". В свойстве SelectedTrainId находится Id тренировки.</summary>
-    public event EventHandler OnDeleteTrain;
-
     /// <summary>Id тренировки, выбранной пользователем</summary>
     public Guid SelectedTrainId { get; set; }
 
@@ -92,10 +86,10 @@
 
       _LinesPaint.Color = Color.Black;
 
-      _RectPaint.Color = Color.Silver;
+      _RectPaint.Color = Resources.GetColor(Droid.Resource.Color.colorPrimary);
       _RectPaint.Alpha = 50;
 
-      _RectStrokePaint.Color = Color.Silver;
+      _RectStrokePaint.Color = Resources.GetColor(Droid.Resource.Color.colorPrimary);
       _RectStrokePaint.Alpha = 230;
 
       _TrainTitlePaint.Color = Color.Black;

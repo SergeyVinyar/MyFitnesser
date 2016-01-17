@@ -114,7 +114,6 @@ namespace MyFitnesser.Droid.Views {
         CalendarDaysView v;
         FragmentManager.BeginTransaction()
           .Replace(Droid.Resource.Id.panel_left, v = new CalendarDaysView())
-          //.AddToBackStack(null)
           .Commit();
         v.ViewModel = viewModel;
         return true;
@@ -123,7 +122,6 @@ namespace MyFitnesser.Droid.Views {
         CalendarYearsView v;
         FragmentManager.BeginTransaction()
           .Replace(Droid.Resource.Id.panel_left, v = new CalendarYearsView())
-          //.AddToBackStack(null)
           .Commit();
         v.ViewModel = viewModel;
         return true;

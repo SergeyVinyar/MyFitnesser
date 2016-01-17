@@ -4,6 +4,8 @@
 
   using Cirrious.MvvmCross.ViewModels;
 
+  using MyFitnesser.Core.Utils;
+
 
   public class TrainViewModel : MvxViewModel {
 
@@ -25,7 +27,21 @@
         this.Status    = _Record.Status;
         this.Notes     = _Record.Notes;
       }
+      Clients = new SuspendableObservableCollection<ClientsViewModel.Client>();
+      var clients = Database.ClientRecord.Records().ToList();
+      clients.ForEach(client => {
+        ClientsViewModel.Client c;
+        Clients.Add(c = new ClientsViewModel.Client() {
+          Id   = client.Id,
+          Name = client.Name,
+        });
+        if (c.Id == this.ClientId)
+          SelectedClient = c;
+      });
+      if (SelectedClient == null && Clients.Count > 0)
+        SelectedClient = Clients[0];
     }
+    private Database.TrainRecord _Record;
 
     public Guid ClientId { 
       get { return _ClientId; }
@@ -57,21 +73,39 @@
     }
     private string _Notes;
 
-    public IMvxCommand WriteAndCloseCommand { get { return new MvxCommand(() => WriteAndClose()); } }
+    public SuspendableObservableCollection<ClientsViewModel.Client> Clients { 
+      get { 
+        return _Clients;
+      } 
+      private set { 
+        _Clients = value; 
+        RaisePropertyChanged(() => Clients); 
+      } 
+    }
+    private SuspendableObservableCollection<ClientsViewModel.Client> _Clients;
 
-    private void WriteAndClose() {
+    public ClientsViewModel.Client SelectedClient { 
+      get { return _SelectedClient; }
+      set { _SelectedClient = value; _ClientId = value.Id; RaisePropertyChanged(() => SelectedClient); }
+    }
+    private ClientsViewModel.Client _SelectedClient;
+
+    public IMvxCommand WriteCommand { get { return new MvxCommand(() => Write(false), () => true); } }
+
+    public IMvxCommand WriteAndCloseCommand { get { return new MvxCommand(() => Write(true), () => true); } }
+
+    private void Write(bool thenClose) {
       _Record.ClientId  = this.ClientId;
       _Record.StartDate = this.StartDate;
       _Record.EndDate   = this.EndDate;
       _Record.Status    = this.Status;
       _Record.Notes     = this.Notes;
       _Record.Write();
-      Close(this);
+      if (thenClose)
+        Close(this);
     }
 
     public IMvxCommand CloseCommand { get { return new MvxCommand(() => Close(this), () => true); } }
-
-    private Database.TrainRecord _Record;
 
     public class ViewParameters {
       public DateTime Date { get; set; }

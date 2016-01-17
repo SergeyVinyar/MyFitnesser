@@ -17,7 +17,6 @@
       Database.ClientRecord.OnDataChanged += (s, e) => UpdateClients();
     }
 
-    /// <summary>Тренировки на дату страницы</summary>
     public SuspendableObservableCollection<Client> Clients { 
       get { 
         return _Clients;

@@ -16,6 +16,7 @@
 
   using Cirrious.MvvmCross.Binding.Droid.BindingContext;
   using Cirrious.MvvmCross.Droid.FullFragging.Fragments;
+  using Cirrious.MvvmCross.Binding.Droid.Views;
 
   using Core.ViewModels;
 
@@ -31,7 +32,19 @@
     public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
       base.OnCreateView(inflater, container, savedInstanceState);
       ((MainActivityView)Activity).Toolbar.Title = "Тренировка";
+      SetHasOptionsMenu(true);
       return this.BindingInflate(MyFitnesser.Droid.Resource.Layout.Train, null);
+    }
+
+    public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater) {
+      inflater.Inflate(Droid.Resource.Menu.SaveCancel, menu);
+    }
+
+    public override void OnPause() {
+      base.OnPause();
+      // Выход из фрагмента или приложения не основание терять изменения данных
+      var model = (TrainViewModel)ViewModel;
+      model.WriteCommand.Execute();
     }
 
     public override void OnResume() {
@@ -40,6 +53,20 @@
       mainActivity.DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
       mainActivity.DrawerToggle.DrawerIndicatorEnabled = false;
     }
+
+    public override bool OnOptionsItemSelected(IMenuItem item) {
+      var model = (TrainViewModel)ViewModel;
+      switch (item.ItemId) {
+        case Droid.Resource.Id.action_save:
+          model.WriteAndCloseCommand.Execute();
+          return true;
+        case Droid.Resource.Id.action_cancel:
+          model.CloseCommand.Execute();
+          return true;
+      }
+      return base.OnOptionsItemSelected(item);
+    }
+
   }
 }
 

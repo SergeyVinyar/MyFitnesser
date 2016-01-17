@@ -1956,8 +1956,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07003c
 			public const int action_bar_title = 2131165244;
 			
-			// aapt resource value: 0x7f070099
-			public const int action_cancel = 2131165337;
+			// aapt resource value: 0x7f07009a
+			public const int action_cancel = 2131165338;
 			
 			// aapt resource value: 0x7f07005d
 			public const int action_context_bar = 2131165277;
@@ -1980,8 +1980,8 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f07003e
 			public const int action_mode_close_button = 2131165246;
 			
-			// aapt resource value: 0x7f070098
-			public const int action_save = 2131165336;
+			// aapt resource value: 0x7f070099
+			public const int action_save = 2131165337;
 			
 			// aapt resource value: 0x7f07003f
 			public const int activity_chooser_view_content = 2131165247;
@@ -2160,29 +2160,29 @@ namespace MyFitnesser.Droid
 			// aapt resource value: 0x7f070017
 			public const int multiply = 2131165207;
 			
-			// aapt resource value: 0x7f070094
-			public const int nav_clients = 2131165332;
-			
-			// aapt resource value: 0x7f070091
-			public const int nav_days = 2131165329;
-			
 			// aapt resource value: 0x7f070095
-			public const int nav_footer = 2131165333;
-			
-			// aapt resource value: 0x7f070097
-			public const int nav_helpfeedback = 2131165335;
-			
-			// aapt resource value: 0x7f070090
-			public const int nav_items = 2131165328;
-			
-			// aapt resource value: 0x7f070093
-			public const int nav_refbooks = 2131165331;
-			
-			// aapt resource value: 0x7f070096
-			public const int nav_settings = 2131165334;
+			public const int nav_clients = 2131165333;
 			
 			// aapt resource value: 0x7f070092
-			public const int nav_years = 2131165330;
+			public const int nav_days = 2131165330;
+			
+			// aapt resource value: 0x7f070096
+			public const int nav_footer = 2131165334;
+			
+			// aapt resource value: 0x7f070098
+			public const int nav_helpfeedback = 2131165336;
+			
+			// aapt resource value: 0x7f070091
+			public const int nav_items = 2131165329;
+			
+			// aapt resource value: 0x7f070094
+			public const int nav_refbooks = 2131165332;
+			
+			// aapt resource value: 0x7f070097
+			public const int nav_settings = 2131165335;
+			
+			// aapt resource value: 0x7f070093
+			public const int nav_years = 2131165331;
 			
 			// aapt resource value: 0x7f07007c
 			public const int navigation_frame = 2131165308;
@@ -2357,6 +2357,9 @@ namespace MyFitnesser.Droid
 			
 			// aapt resource value: 0x7f070049
 			public const int topPanel = 2131165257;
+			
+			// aapt resource value: 0x7f070090
+			public const int train_clientspinner = 2131165328;
 			
 			// aapt resource value: 0x7f070009
 			public const int up = 2131165193;

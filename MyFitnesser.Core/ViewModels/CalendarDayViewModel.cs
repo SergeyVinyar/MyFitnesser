@@ -15,11 +15,13 @@
     public CalendarDayViewModel() {
       Date = DateTime.Now.Date;      
       UpdateTrains();
+      Database.TrainRecord.OnDataChanged += (s, e) => UpdateTrains();
     }
 
     public CalendarDayViewModel(DateTime date) {
       Date = date.Date;      
       UpdateTrains();
+      Database.TrainRecord.OnDataChanged += (s, e) => UpdateTrains();
     }
 
     /// <summary>Дата данной страницы</summary>
