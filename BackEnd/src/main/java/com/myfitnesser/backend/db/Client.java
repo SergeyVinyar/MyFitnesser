@@ -13,6 +13,10 @@ import javax.persistence.*;
 @Table(name = "client")
 public final class Client extends BaseEntity {
 
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     @Column(length = 255)
     private String name;
 
@@ -50,6 +54,15 @@ public final class Client extends BaseEntity {
 
     public static void deleteAll(List<UUID> ids) throws DbException {
         BaseEntity.deleteAll(Client.class, ids);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Client setUser(User user) {
+        this.user = user;
+        return this;
     }
 
     public String getName() {

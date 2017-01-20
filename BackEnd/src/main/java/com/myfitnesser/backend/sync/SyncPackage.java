@@ -20,22 +20,22 @@ final class SyncPackage {
     /**
      * Идентификаторы удаленных клиентов
      */
-    UUID[] cDeleted;
+    UUID[] clientsDeleted;
 
     /**
      * Данные добавленных/измененных клиентов
      */
-    Client[] cUpdated;
+    Client[] clientsUpdated;
 
     /**
      * Идентификаторы удаленных тренировок
      */
-    UUID[] tDeleted;
+    UUID[] trainingsDeleted;
 
     /**
      * Данные добавленных/измененных тренировок
      */
-    Training[] tUpdated;
+    Training[] trainingsUpdated;
 
     /**
      * Клиент

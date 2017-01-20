@@ -30,10 +30,13 @@ final class DbService {
         cfg.setProperty("hibernate.hbm2ddl.auto", "update");
         cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
 
+        // TODO Как сделать саморегистрирующиеся классы?
         cfg.addAnnotatedClass(Client.class);
         cfg.addAnnotatedClass(Training.class);
         cfg.addAnnotatedClass(LatestSync.class);
-        //cfg.addAnnotatedClass(User.class); // TODO Как сделать саморегистрирующиеся классы?
+        cfg.addAnnotatedClass(User.class);
+        cfg.addAnnotatedClass(Token.class);
+
 
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(cfg.getProperties());
@@ -80,9 +83,9 @@ final class DbService {
     /**
      *  Выполняет в транзакции callback
      */
-    <T extends BaseEntity> T execute(Executable<T> executable) throws DbException {
+    <R> R execute(Executable<R> executable) throws DbException {
         try {
-            T result = null;
+            R result = null;
             try(Session session = sessionFactory.openSession()) {
                 Transaction transaction = session.beginTransaction();
                 try {
@@ -105,7 +108,7 @@ final class DbService {
         try {
             R result;
             try(Session session = sessionFactory.openSession()) {
-                return executable.Execute(session.createQuery("FROM " + entityClass.getSimpleName(), entityClass).stream());
+                return executable.Execute(session.createQuery("from " + entityClass.getSimpleName(), entityClass).stream());
             }
         }
         catch(HibernateException e) {

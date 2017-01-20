@@ -15,6 +15,10 @@ import java.util.function.Supplier;
 public final class Training extends BaseEntity {
 
     @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 
@@ -52,6 +56,15 @@ public final class Training extends BaseEntity {
 
     public static void deleteAll(List<UUID> ids) throws DbException {
         BaseEntity.deleteAll(Training.class, ids);
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Training setUser(User user) {
+        this.user = user;
+        return this;
     }
 
     public Client getClient() {

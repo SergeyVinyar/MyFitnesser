@@ -1,5 +1,6 @@
 package com.myfitnesser.backend.db;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.OffsetDateTime;
@@ -62,6 +63,17 @@ abstract class BaseEntity {
         });
     }
 
+    protected static <T extends BaseEntity> boolean exists(Class<T> entityClass, UUID id) throws DbException {
+        return DbService.getInstance().execute(session -> {
+            List result = session.createQuery(
+                    "select count(*) from " + entityClass.getSimpleName() + " where id == :id")
+                    .setParameter("id", id)
+                    .list();
+            assert result.size() == 1 && result.get(0) instanceof Number;
+            return !((Number) result.get(0)).equals(0);
+        });
+    }
+
     protected static <T extends BaseEntity> T get(Class<T> entityClass, UUID id, Supplier<T> defaultValue) throws DbException {
         T result = DbService.getInstance().get(entityClass, id);
         if(result == null && defaultValue != null)
@@ -69,11 +81,14 @@ abstract class BaseEntity {
         return result;
     }
 
+    /**
+     * Внимание: запрашивает в БД все данные, потом фильтрует
+     */
     protected static <T extends BaseEntity> List<T> select(Class<T> entityClass, Predicate<T> filter) throws DbException {
-        return DbService.getInstance().executeWithStream(entityClass, s -> {
+        return DbService.getInstance().executeWithStream(entityClass, stream -> {
             if(filter != null)
-                s = s.filter(filter);
-            return s.collect(Collectors.toList());
+                stream = stream.filter(filter);
+            return stream.collect(Collectors.toList());
         });
     }
 
