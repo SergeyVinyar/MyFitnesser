@@ -3,6 +3,7 @@ package com.myfitnesser.backend.db;
 import javax.persistence.*;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * Токен
@@ -22,6 +23,10 @@ public final class Token extends BaseEntity {
     private OffsetDateTime expirationDateTime;
 
     public Token() {
+    }
+
+    public static List<Token> select(Predicate<Token> filter) throws DbException {
+        return BaseEntity.select(Token.class, filter);
     }
 
     /**

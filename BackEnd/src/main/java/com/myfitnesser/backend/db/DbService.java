@@ -11,17 +11,38 @@ import org.hibernate.service.ServiceRegistry;
 /**
  * Сервис для работы с БД
  */
-final class DbService {
+class DbService {
 
-    private static final DbService dbService = new DbService();
+    private static DbService dbService;
     private final SessionFactory sessionFactory;
 
     static DbService getInstance() {
+        if(dbService == null)
+            dbService = new DbService();
         return dbService;
     }
 
-    private DbService() {
+    protected DbService() {
         Configuration cfg = new Configuration();
+        initConfiguration(cfg);
+
+        // TODO Как сделать саморегистрирующиеся классы?
+        cfg.addAnnotatedClass(Client.class);
+        cfg.addAnnotatedClass(Training.class);
+        cfg.addAnnotatedClass(LatestSync.class);
+        cfg.addAnnotatedClass(User.class);
+        cfg.addAnnotatedClass(Token.class);
+
+        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
+        builder.applySettings(cfg.getProperties());
+        ServiceRegistry serviceRegistry = builder.build();
+        sessionFactory = cfg.buildSessionFactory(serviceRegistry);
+    }
+
+    /**
+     * Инициализация Hibernate
+     */
+    protected void initConfiguration(Configuration cfg) {
         cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
 
         String host = System.getenv("DB_HOST");
@@ -45,19 +66,14 @@ final class DbService {
         cfg.setProperty("hibernate.show_sql", "true");
         cfg.setProperty("hibernate.hbm2ddl.auto", "update");
         cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
+    }
 
-        // TODO Как сделать саморегистрирующиеся классы?
-        cfg.addAnnotatedClass(Client.class);
-        cfg.addAnnotatedClass(Training.class);
-        cfg.addAnnotatedClass(LatestSync.class);
-        cfg.addAnnotatedClass(User.class);
-        cfg.addAnnotatedClass(Token.class);
-
-
-        StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
-        builder.applySettings(cfg.getProperties());
-        ServiceRegistry serviceRegistry = builder.build();
-        sessionFactory = cfg.buildSessionFactory(serviceRegistry);
+    /**
+     * Закрыть соединение
+     */
+    protected void close() {
+        if(sessionFactory.isOpen())
+            sessionFactory.close();
     }
 
     /**

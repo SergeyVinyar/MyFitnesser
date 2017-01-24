@@ -39,7 +39,6 @@ public final class SecurityService {
         user.setEmail(email);
         user.setSalt(salt);
         user.setPassHash(generateHash(password, salt));
-        user.setActive(true);
         user.setRegistrationDateTime(OffsetDateTime.now());
         user.save();
 
@@ -92,6 +91,17 @@ public final class SecurityService {
     }
 
     /**
+     * Удаление пользователя из системы (данные в базе сохраняются)
+     * @param tokenData
+     * Токен
+     */
+    public static void deleteUser(byte[] tokenData) throws DbException {
+        User user = getUserFromTokenData(tokenData);
+        if(user != null)
+            user.delete();
+    }
+
+    /**
      * Возвращает пользователя по токену
      * @return
      * null, если токен невалиден или просрочился
@@ -103,7 +113,7 @@ public final class SecurityService {
         User user = token.getUser();
         if(user == null)
             return null;
-        if(!user.isActive())
+        if(user.isDeleted())
             return null;
         return user;
     }

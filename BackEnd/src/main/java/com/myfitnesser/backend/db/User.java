@@ -25,9 +25,6 @@ public final class User extends BaseEntity {
     @Column
     private OffsetDateTime registrationDateTime;
 
-    @Column
-    private boolean Active;
-
     public User() {
         super();
     }
@@ -38,7 +35,7 @@ public final class User extends BaseEntity {
      * null, если не найден
      */
     public static User getByEmail(String email) throws DbException {
-        List<User> result = select(User.class, v -> v.getEmail().equals(email));
+        List<User> result = select(User.class, v -> !v.isDeleted() && v.getEmail().equals(email));
         return result.size() != 0 ? result.get(0) : null;
     }
 
@@ -75,15 +72,6 @@ public final class User extends BaseEntity {
 
     public User setRegistrationDateTime(OffsetDateTime dateOfRegistration) {
         this.registrationDateTime = dateOfRegistration;
-        return this;
-    }
-
-    public boolean isActive() {
-        return Active;
-    }
-
-    public User setActive(boolean active) {
-        Active = active;
         return this;
     }
 }
