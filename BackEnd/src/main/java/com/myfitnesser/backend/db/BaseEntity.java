@@ -1,6 +1,5 @@
 package com.myfitnesser.backend.db;
 
-import com.sun.xml.internal.rngom.parse.host.Base;
 import org.hibernate.annotations.ColumnDefault;
 
 import java.time.OffsetDateTime;

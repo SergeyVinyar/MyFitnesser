@@ -23,9 +23,25 @@ final class DbService {
     private DbService() {
         Configuration cfg = new Configuration();
         cfg.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
-        cfg.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/sergeyv");
-        cfg.setProperty("hibernate.connection.username", "sergeyv");
-        cfg.setProperty("hibernate.connection.password", "");
+
+        String host = System.getenv("DB_HOST");
+        if(host != null) {
+            // Production
+            String port = System.getenv("DB_PORT");
+            String user = System.getenv("DB_USER");
+            String password = System.getenv("DB_PASSWORD");
+            String database = System.getenv("DB_DATABASE");
+            cfg.setProperty("hibernate.connection.url", String.format("jdbc:postgresql://%s:%s/%s", host, port, database));
+            cfg.setProperty("hibernate.connection.username", user);
+            cfg.setProperty("hibernate.connection.password", password);
+        }
+        else {
+            // Development
+            cfg.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/sergeyv");
+            cfg.setProperty("hibernate.connection.username", "sergeyv");
+            cfg.setProperty("hibernate.connection.password", "");
+        }
+
         cfg.setProperty("hibernate.show_sql", "true");
         cfg.setProperty("hibernate.hbm2ddl.auto", "update");
         cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL95Dialect");
