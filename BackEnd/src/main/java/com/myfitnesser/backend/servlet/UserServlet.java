@@ -62,7 +62,9 @@ final public class UserServlet extends HttpServlet {
             // Удаление пользователя
             } else if (action.equalsIgnoreCase("delete")) {
                 byte[] tokenData = req.getParameter("token") != null ? req.getParameter("token").getBytes() : (new byte[0]);
+                tokenData = Base64.getDecoder().decode(tokenData);
                 SecurityService.deleteUser(tokenData);
+                resp.setStatus(HttpServletResponse.SC_OK);
 
             } else {
                 resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Action is not defined or recognized");

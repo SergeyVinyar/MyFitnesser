@@ -45,7 +45,7 @@ public class DbServiceInMemory extends DbService {
         cfg.setProperty("hibernate.connection.username", "test");
         cfg.setProperty("hibernate.connection.password", "");
 
-        cfg.setProperty("hibernate.show_sql", "true");
+        //cfg.setProperty("hibernate.show_sql", "true");
         cfg.setProperty("hibernate.hbm2ddl.auto", "create");
         cfg.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
     }
