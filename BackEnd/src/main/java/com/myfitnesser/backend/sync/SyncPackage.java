@@ -8,104 +8,104 @@ import java.util.UUID;
  * Пакет данных синхронизации с пользовательскими устройствами.
  * Сериализуется в Json.
  */
-final class SyncPackage {
+public final class SyncPackage {
 
-    UUID deviceId;
+    public UUID deviceId;
 
     /**
      * Версия формата пакета
      */
-    int ver = 1;
+    public int ver = 1;
 
     /**
      * Идентификаторы удаленных клиентов
      */
-    UUID[] clientsDeleted;
+    public UUID[] clientsDeleted;
 
     /**
      * Данные добавленных/измененных клиентов
      */
-    Client[] clientsUpdated;
+    public Client[] clientsUpdated;
 
     /**
      * Идентификаторы удаленных тренировок
      */
-    UUID[] trainingsDeleted;
+    public UUID[] trainingsDeleted;
 
     /**
      * Данные добавленных/измененных тренировок
      */
-    Training[] trainingsUpdated;
+    public Training[] trainingsUpdated;
 
     /**
      * Клиент
      */
-    class Client {
+    public class Client {
 
         /**
          * Идентификатор
          */
-        UUID id;
+        public UUID id;
 
         /**
          * ФИО
          */
-        String name;
+        public String name;
 
         /**
          * Телефон
          */
-        String phone;
+        public String phone;
 
         /**
          * Email
          */
-        String email;
+        public String email;
 
         /**
          * Дата рождения
          */
-        LocalDate birthDate;
+        public LocalDate birthDate;
 
         /**
          * Примечание
          */
-        String notes;
+        public String notes;
     }
 
     /**
      * Тренировка
      */
-    class Training {
+    public class Training {
 
         /**
          * Идентификатор
          */
-        UUID id;
+        public UUID id;
 
         /**
          * Идентификатор клиента
          */
-        UUID clientId;
+        public UUID clientId;
 
         /**
          * Дата/время начала
          */
-        OffsetDateTime start;
+        public OffsetDateTime start;
 
         /**
          * Дата/время окончания
          */
-        OffsetDateTime end;
+        public OffsetDateTime end;
 
         /**
          * Состояние
          */
-        com.myfitnesser.backend.db.Training.State state;
+        public com.myfitnesser.backend.db.Training.State state;
 
         /**
          * Примечание
          */
-        String notes;
+        public String notes;
     }
 }

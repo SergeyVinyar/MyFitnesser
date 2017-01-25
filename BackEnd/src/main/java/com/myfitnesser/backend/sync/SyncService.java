@@ -105,6 +105,7 @@ public final class SyncService {
      * те изменения, которые только что приехали с устройства. Просто для уменьшения трафика.
      */
     private static SyncPackage dbToSyncPackage(User user, UUID deviceId, OffsetDateTime newLatestSync, SyncPackage syncPackageFromDevice) throws SyncException {
+        // TODO ДОбавить проверку, что пользователь не пытается изменить не свои данные + добавить соотв-е тесты
         try {
             SyncPackage syncPackage = new SyncPackage();
             syncPackage.deviceId = deviceId;
