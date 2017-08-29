@@ -49,7 +49,7 @@ so recreating Db Docker container won't drop any data)
 
 **Mobile app**
 
-We wanted to share code between Android and iOs platforms so we used (Xamarin)[https://www.xamarin.com/]. 
+We wanted to share code between Android and iOs platforms so we used [Xamarin](https://www.xamarin.com/).
 Xamarin is an implementation of [Mono platform](http://www.mono-project.com/) with some native libraries for mobile devices. 
 You have to use C# with Xamarin.
 Xamarin has a few option for making UI: XAML and native for each platform way. I decided to use native methods. So I had 
