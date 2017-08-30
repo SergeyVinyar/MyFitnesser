@@ -30,9 +30,9 @@ each other *com.myfitnesser.backend.sync.SyncPackage*. SyncPackages are serializ
 that were changed since the previous synchronization.
 
 Deployment is automated (have a look at */deploy* directory). Servers are deployed as docker containers 
-using [Docker Machine](https://docs.docker.com/machine/). Docker Machine is a part of Docker distribution package and is used
-for managing remote Docker daemons. I intended to use Digital Ocean droplets that's why the deployment process contains 
-Digital Ocean droplet auto creation.
+using [Docker Machine](https://docs.docker.com/machine/). Docker Machine is a part of docker distribution package and is used
+for managing remote Docker daemons. I intended to use Digital Ocean droplets that's why the deployment process includes 
+Digital Ocean droplet creation stage.
 
 The full process of deployment consists of:
 * Defining environment variables: DO_API_KEY (Digital Ocean private key), DB_USER, DB_PASSWORD
@@ -42,10 +42,10 @@ The full process of deployment consists of:
 build_and_deploy.sh: 
 * Builds a project. We get Server.jar as a result
 * Builds a docker container with Server.jar based on [Alpine](https://docs.docker.com/samples/library/alpine/) image
-* Removes existing Docker containers on Digital Ocean droplet and runs a new one there
+* Removes existing docker containers on Digital Ocean droplet and runs a new one there
 * Sets database credentials using environment variables
-* Runs Db Docker container based on *postgres:9.6-alpine* image (database data is located in a directory on a host machine 
-so recreating Db Docker container won't drop any data)
+* Runs db docker container based on *postgres:9.6-alpine* image (database data is located in a directory on a host machine 
+so recreating db docker container won't drop any data)
 
 **Mobile app**
 
@@ -61,4 +61,3 @@ lots of f*cking magic due to its beta status (it was long time ago, everything c
 Generally I liked MvvmCross. It worth time to look about.
 
 Unfortunatelly development had stopped too early so I assume that mobile app source code is useless.
-
