@@ -29,7 +29,7 @@
         db.Commit();
       }
       finally {
-        db.Rollback();
+        db.Rollback(); // TODO WTF, bro???
       }
     }
 
